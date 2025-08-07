@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit User</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              roboto: ["Roboto", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-gray-50 min-h-screen flex items-center justify-center p-4 font-roboto"
+  >
+    <div class="bg-white rounded-2xl shadow-lg w-full max-w-2xl">
+      <!-- Header -->
+      <div
+        class="flex items-center justify-between mb-3 border-b border-gray-200 p-4"
+      >
+        <h2 class="text-xl font-semibold text-gray-900">Edit User</h2>
+        <button
+          class="text-gray-400 text-2xl font-normal hover:text-gray-600 transition-colors w-8 h-8 flex items-center justify-center"
+          onclick="closeForm()"
+          type="button"
+        >
+          ×
+        </button>
+      </div>
+
+      <!-- Form -->
+      <form
+        id="editUserForm"
+        onsubmit="handleSubmit(event)"
+        class="pr-5 pl-5 pt-2"
+      >
+        <!-- Personal Information Section -->
+        <div class="mb-8">
+          <h3 class="font-semibold text-lg text-gray-900 mb-6">
+            Personal Information
+          </h3>
+
+          <!-- Full Name and Father's Name Row -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div>
+              <label
+                class="block text-sm font-medium text-[#374151] mb-2"
+                for="fullname"
+              >
+                Full Name <span class="text-red-500">*</span>
+              </label>
+              <input
+                required
+                class="w-full border border-gray-200 rounded-[16px] bg-gray-50 py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                type="text"
+                id="fullname"
+                name="fullname"
+                value="John Doe"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-[#374151] mb-2"
+                for="fathername"
+              >
+                Father's Name <span class="text-red-500">*</span>
+              </label>
+              <input
+                required
+                class="w-full border border-gray-200 rounded-[14px] bg-gray-50 py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                type="text"
+                id="fathername"
+                name="fathername"
+                value="Michal"
+              />
+            </div>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="mb-6">
+            <label
+              class="block text-sm font-medium text-[#374151] mb-2"
+              for="phone"
+            >
+              Phone Number <span class="text-red-500">*</span>
+            </label>
+            <input
+              required
+              class="w-full border border-gray-200 rounded-[14px] bg-gray-50 py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              type="tel"
+              id="phone"
+              name="phone"
+              value="+91   (555) 123-4567"
+            />
+          </div>
+        </div>
+
+        <!-- Address Information Section -->
+        <div class="mb-8">
+          <h3 class="font-semibold text-lg text-gray-900 mb-6">
+            Address Information
+          </h3>
+
+          <!-- Street Address -->
+          <div class="mb-6">
+            <label
+              class="block text-sm font-medium text-[#374151] mb-2"
+              for="street"
+            >
+              Street Address
+            </label>
+            <input
+              class="w-full border border-gray-200 rounded-[14px] bg-gray-50 py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              type="text"
+              id="street"
+              name="street"
+              value="#123, ABC street"
+            />
+          </div>
+
+          <!-- Locality and Pin Code Row -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div>
+              <label
+                class="block text-sm font-medium text-[#374151] mb-2"
+                for="locality"
+              >
+                Locality
+              </label>
+              <input
+                class="w-full border border-gray-200 rounded-[14px] bg-gray-50 py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                type="text"
+                id="locality"
+                name="locality"
+                value="New market"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-[#374151] mb-2"
+                for="pincode"
+              >
+                Pin Code
+              </label>
+              <input
+                class="w-full border border-gray-200 rounded-[14px] bg-gray-50 py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                type="text"
+                id="pincode"
+                name="pincode"
+                value="123456"
+              />
+            </div>
+          </div>
+
+          <!-- City and State Row -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div>
+              <label
+                class="block text-sm font-medium text-[#374151] mb-2"
+                for="city"
+              >
+                City
+              </label>
+              <input
+                class="w-full border border-gray-200 rounded-[14px] bg-gray-50 py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                type="text"
+                id="city"
+                name="city"
+                value="Yamunanagar"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-[#374151] mb-2"
+                for="state"
+              >
+                State
+              </label>
+              <input
+                class="w-full border border-gray-200 rounded-[14px] bg-gray-50 py-3 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                type="text"
+                id="state"
+                name="state"
+                value="Haryana"
+              />
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- Action Buttons -->
+      <div
+        class="flex flex-col sm:flex-row justify-end items-center gap-3 pl-5 pr-5 mb-4 border-t pt-5 border-gray-200"
+      >
+        <button
+          type="button"
+          class="w-full sm:w-auto px-6 py-3 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
+          onclick="cancelEdit()"
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="w-full sm:w-auto px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors flex items-center justify-center"
+        >
+          Next →
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        // Get form data
+        const formData = new FormData(event.target);
+        const data = Object.fromEntries(formData);
+
+        // Basic validation
+        const requiredFields = ["fullname", "fathername", "phone"];
+        const missingFields = requiredFields.filter(
+          (field) => !data[field] || data[field].trim() === ""
+        );
+
+        if (missingFields.length > 0) {
+          alert(
+            `Please fill in all required fields: ${missingFields.join(", ")}`
+          );
+          return false;
+        }
+
+        // Phone number validation
+        const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+        if (!phoneRegex.test(data.phone.replace(/[\s\-$$$$]/g, ""))) {
+          alert("Please enter a valid phone number");
+          return false;
+        }
+
+        console.log("Updated User Data:", data);
+        alert("User information updated successfully!");
+
+        // Here you would typically send the updated data to your backend
+
+        return false;
+      }
+
+      function cancelEdit() {
+        if (
+          confirm("Are you sure you want to cancel? All changes will be lost.")
+        ) {
+          // Reset form to original values or close the edit form
+          location.reload(); // This would reload the form with original data
+        }
+      }
+
+      function closeForm() {
+        if (
+          confirm("Are you sure you want to close? All changes will be lost.")
+        ) {
+          // In a real application, this might close a modal or navigate away
+          alert("Edit form closed");
+          // You could redirect to user list or close modal here
+        }
+      }
+
+      // Add input formatting for phone number
+      document.getElementById("phone").addEventListener("input", function (e) {
+        let value = e.target.value.replace(/\D/g, "");
+        if (value.length >= 10) {
+          value = value.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+        } else if (value.length >= 6) {
+          value = value.replace(/(\d{3})(\d{3})/, "($1) $2-");
+        } else if (value.length >= 3) {
+          value = value.replace(/(\d{3})/, "($1) ");
+        }
+        e.target.value = value;
+      });
+
+      // Add input formatting for pin code (numbers only)
+      document
+        .getElementById("pincode")
+        .addEventListener("input", function (e) {
+          e.target.value = e.target.value.replace(/\D/g, "");
+        });
+    </script>
+  </body>
+</html>

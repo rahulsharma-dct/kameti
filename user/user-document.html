@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              roboto: ["Roboto", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 min-h-screen font-roboto">
+    <div
+      class="bg-white max-w-[80rem] mx-auto shadow-lg min-h-screen mt-4 mb-4 rounded-[16px]"
+    >
+      <!-- Header -->
+      <div
+        class="flex items-center justify-between p-6 border-b border-gray-200"
+      >
+        <h1 class="text-xl font-semibold text-gray-900">User Details</h1>
+        <button
+          class="text-gray-400 text-2xl hover:text-gray-600 transition-colors"
+          onclick="closeUserDetails()"
+          type="button"
+        >
+          ×
+        </button>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="border-b border-gray-200">
+        <nav class="flex space-x-6 px-6 py-4">
+          <button
+            class="px-4 py-2 text-gray-600 text-sm font-medium hover:text-gray-800 transition-colors tab-button"
+            onclick="switchTab(this, 'personal')"
+          >
+            Personal
+          </button>
+          <button
+            class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md tab-button active"
+            onclick="switchTab(this, 'documents')"
+          >
+            Documents
+          </button>
+          <button
+            class="px-4 py-2 text-gray-600 text-sm font-medium hover:text-gray-800 transition-colors tab-button"
+            onclick="switchTab(this, 'enrollments')"
+          >
+            Enrollments
+          </button>
+          <button
+            class="px-4 py-2 text-gray-600 text-sm font-medium hover:text-gray-800 transition-colors tab-button"
+            onclick="switchTab(this, 'payments')"
+          >
+            Payments
+          </button>
+          <button
+            class="px-4 py-2 text-gray-600 text-sm font-medium hover:text-gray-800 transition-colors tab-button"
+            onclick="switchTab(this, 'timeline')"
+          >
+            Timeline
+          </button>
+          <button
+            class="px-4 py-2 text-gray-600 text-sm font-medium hover:text-gray-800 transition-colors tab-button"
+            onclick="switchTab(this, 'withdrawals')"
+          >
+            Withdrawals
+          </button>
+        </nav>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="p-6">
+        <!-- Other Tab Contents (Hidden by default) -->
+        <div id="enrollments-content" class="tab-content hidden">
+          <div class="text-center py-12">
+            <svg
+              class="w-12 h-12 text-gray-400 mx-auto mb-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              ></path>
+            </svg>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">Enrollments</h3>
+            <p class="text-gray-500">
+              User enrollments will be displayed here.
+            </p>
+          </div>
+        </div>
+
+        <div id="payments-content" class="tab-content hidden">
+          <div class="text-center py-12">
+            <svg
+              class="w-12 h-12 text-gray-400 mx-auto mb-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+              ></path>
+            </svg>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">Payments</h3>
+            <p class="text-gray-500">Payment history will be displayed here.</p>
+          </div>
+        </div>
+
+        <div id="timeline-content" class="tab-content hidden">
+          <div class="text-center py-12">
+            <svg
+              class="w-12 h-12 text-gray-400 mx-auto mb-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">Timeline</h3>
+            <p class="text-gray-500">
+              User activity timeline will be displayed here.
+            </p>
+          </div>
+        </div>
+
+        <div id="withdrawals-content" class="tab-content hidden">
+          <div class="text-center py-12">
+            <svg
+              class="w-12 h-12 text-gray-400 mx-auto mb-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+              ></path>
+            </svg>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">Withdrawals</h3>
+            <p class="text-gray-500">
+              Withdrawal history will be displayed here.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function closeUserDetails() {
+        alert("Closing user details");
+        // In a real application, this would close the modal or navigate back
+      }
+
+      function editUser() {
+        alert("Opening edit user form");
+        // In a real application, this would open the edit user form
+      }
+
+      function switchTab(clickedTab, tabName) {
+        // Remove active class from all tabs
+        document.querySelectorAll(".tab-button").forEach((tab) => {
+          tab.classList.remove("active", "bg-blue-600", "text-white");
+          tab.classList.add("text-gray-600");
+        });
+
+        // Add active class to clicked tab
+        clickedTab.classList.add("active", "bg-blue-600", "text-white");
+        clickedTab.classList.remove("text-gray-600");
+
+        // Hide all tab contents
+        document.querySelectorAll(".tab-content").forEach((content) => {
+          content.classList.add("hidden");
+        });
+
+        // Show selected tab content
+        document
+          .getElementById(tabName + "-content")
+          .classList.remove("hidden");
+      }
+
+      // Document action functions
+      function viewDocument(docType) {
+        alert(`Viewing ${docType} document`);
+        // In a real application, this would open the document viewer
+      }
+
+      function reuploadDocument(docType) {
+        alert(`Re-uploading ${docType} document`);
+        // In a real application, this would open the file upload dialog
+      }
+
+      function editDocument(docType) {
+        alert(`Editing ${docType} document`);
+        // In a real application, this would open the document editor
+      }
+
+      function uploadPhoto() {
+        alert("Uploading profile photo");
+        // In a real application, this would open the file upload dialog
+      }
+
+      // Initialize the Documents tab as active
+      document.addEventListener("DOMContentLoaded", function () {
+        // The Documents tab is already active by default in the HTML
+      });
+    </script>
+  </body>
+</html>

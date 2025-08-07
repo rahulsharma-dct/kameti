@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              roboto: ["Roboto", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 min-w-screen font-roboto">
+    <div
+      class="bg-white max-w-[80rem] mx-auto shadow-lg min-h-screen mt-4 mb-4 rounded-[16px]"
+    >
+      <!-- Header -->
+      <div
+        class="flex items-center justify-between p-6 border-b border-gray-200"
+      >
+        <h1 class="text-xl font-semibold text-gray-900">User Details</h1>
+        <button
+          class="text-gray-400 text-2xl hover:text-gray-600 transition-colors"
+          onclick="closeUserDetails()"
+          type="button"
+        >
+          ×
+        </button>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="border-b border-gray-200">
+        <nav class="flex space-x-6 px-6 py-4">
+          <button
+            class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md tab-button active"
+            onclick="switchTab(this, 'personal')"
+          >
+            Personal
+          </button>
+          <button
+            class="px-4 py-2 text-gray-600 text-sm font-medium hover:text-gray-800 transition-colors tab-button"
+            onclick="switchTab(this, 'documents')"
+          >
+            Documents
+          </button>
+          <button
+            class="px-4 py-2 text-gray-600 text-sm font-medium hover:text-gray-800 transition-colors tab-button"
+            onclick="switchTab(this, 'enrollments')"
+          >
+            Enrollments
+          </button>
+          <button
+            class="px-4 py-2 text-gray-600 text-sm font-medium hover:text-gray-800 transition-colors tab-button"
+            onclick="switchTab(this, 'payments')"
+          >
+            Payments
+          </button>
+          <button
+            class="px-4 py-2 text-gray-600 text-sm font-medium hover:text-gray-800 transition-colors tab-button"
+            onclick="switchTab(this, 'timeline')"
+          >
+            Timeline
+          </button>
+          <button
+            class="px-4 py-2 text-gray-600 text-sm font-medium hover:text-gray-800 transition-colors tab-button"
+            onclick="switchTab(this, 'withdrawals')"
+          >
+            Withdrawals
+          </button>
+        </nav>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="p-6">
+        <!-- Personal Tab Content -->
+        <div id="personal-content" class="tab-content">
+          <!-- User Profile Section -->
+          <div class="rounded-lg p-6 mb-6 relative">
+            <!-- Edit Button -->
+            <button
+              class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+              onclick="editUser()"
+              title="Edit User"
+            >
+              <svg
+                class="w-5 h-5"
+                width="19"
+                height="22"
+                viewBox="0 0 19 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.61071 14.7338L14.3162 4.0317L12.817 2.53298L2.11153 13.2562V14.7338H3.61071ZM4.47644 16.8447H0V12.3696L12.0779 0.295464C12.275 0.0984497 12.5214 -5.72205e-05 12.817 -5.72205e-05C13.1126 -5.72205e-05 13.3589 0.0984497 13.556 0.295464L16.5544 3.2929C16.7655 3.48991 16.8711 3.73618 16.8711 4.0317C16.8711 4.32722 16.7655 4.58053 16.5544 4.79161L4.47644 16.8447ZM0 18.9555H19.0037V21.0664H0V18.9555Z"
+                  fill="#737373"
+                />
+              </svg>
+            </button>
+
+            <div class="flex items-start space-x-4">
+              <!-- Profile Picture -->
+              <div class="flex-shrink-0">
+                <img
+                  src="image (13).png"
+                  alt="Alexander Rodriguez"
+                  class="w-[7rem] h-[7rem]rounded-full object-cover"
+                />
+              </div>
+
+              <!-- User Information -->
+              <div class="flex-1">
+                <h2 class="text-xl font-semibold text-gray-900 mb-1">
+                  Alexander Rodriguez
+                </h2>
+                <p class="text-sm text-gray-600 mb-3">
+                  Father: Michael Rodriguez
+                </p>
+
+                <!-- Contact Information -->
+                <div class="space-y-2">
+                  <div class="flex items-center text-sm text-gray-600">
+                    <svg
+                      class="w-4 h-4 mr-2"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.45282 5.23C4.72494 5.71222 5.05732 6.14972 5.44996 6.5425C5.8426 6.93528 6.27994 7.26778 6.76199 7.54L7.27514 6.81667C7.36067 6.69222 7.47535 6.61444 7.61918 6.58333C7.76302 6.55222 7.90103 6.57167 8.0332 6.64167C8.86513 7.10056 9.75537 7.365 10.7039 7.435C10.8516 7.45056 10.978 7.51278 11.0829 7.62167C11.1879 7.73056 11.2404 7.86278 11.2404 8.01833V10.62C11.2404 10.7678 11.1899 10.8981 11.0888 11.0108C10.9877 11.1236 10.8633 11.1878 10.7156 11.2033C10.4046 11.2344 10.0936 11.25 9.78258 11.25C8.55413 11.25 7.3801 11.0128 6.2605 10.5383C5.17978 10.0794 4.22345 9.43389 3.39153 8.60167C2.5596 7.76944 1.91428 6.81278 1.45555 5.73167C0.981278 4.61167 0.744141 3.43722 0.744141 2.20833C0.744141 1.89722 0.759691 1.58611 0.790791 1.275C0.806341 1.12722 0.870484 1.00278 0.983222 0.901667C1.09596 0.800555 1.22619 0.75 1.37392 0.75H3.97465C4.13015 0.75 4.26233 0.8025 4.37118 0.9075C4.48003 1.0125 4.54223 1.13889 4.55778 1.28667C4.62775 2.23556 4.8921 3.12611 5.35083 3.95833C5.4208 4.09056 5.44024 4.22861 5.40914 4.3725C5.37804 4.51639 5.30029 4.63111 5.17589 4.71667L4.45282 5.23ZM2.98334 4.845L4.09128 4.05167C3.78028 3.375 3.56647 2.66333 3.44984 1.91667H1.91039V2.20833C1.91039 3.27389 2.11643 4.29667 2.5285 5.27667C2.92503 6.21778 3.48677 7.05194 4.21373 7.77917C4.9407 8.50639 5.77457 9.06833 6.71534 9.465C7.69499 9.87722 8.7174 10.0833 9.78258 10.0833H10.0741V8.54333C9.32774 8.42667 8.61633 8.21278 7.9399 7.90167L7.14685 9.01C6.82808 8.88556 6.51708 8.73778 6.21385 8.56667L6.17887 8.555C5.61129 8.22833 5.09425 7.83167 4.62775 7.365C4.16125 6.89833 3.76473 6.38111 3.43818 5.81333L3.42652 5.77833C3.25547 5.475 3.10774 5.16389 2.98334 4.845Z"
+                        fill="#4B5563"
+                      />
+                    </svg>
+
+                    +1 (555) 123-4567
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <svg
+                      class="w-4 h-4 mr-2"
+                      width="14"
+                      height="10"
+                      viewBox="0 0 14 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1.74389 1.49996H12.2401V8.49996H1.74389V1.49996ZM1.16076 0.333293C0.997487 0.333293 0.85948 0.389682 0.746743 0.50246C0.634005 0.615237 0.577637 0.753293 0.577637 0.916626V9.08329C0.577637 9.24663 0.634005 9.38468 0.746743 9.49746C0.85948 9.61024 0.997487 9.66663 1.16076 9.66663H12.8233C12.9865 9.66663 13.1245 9.61024 13.2373 9.49746C13.35 9.38468 13.4064 9.24663 13.4064 9.08329V0.916626C13.4064 0.753293 13.35 0.615237 13.2373 0.50246C13.1245 0.389682 12.9865 0.333293 12.8233 0.333293H1.16076ZM7.57514 2.66663H11.0739V3.83329H7.57514V2.66663ZM10.4908 4.99996H7.57514V6.16663H10.4908V4.99996ZM6.11732 3.83329C6.11732 4.09774 6.05124 4.34079 5.91906 4.56246C5.78689 4.78413 5.61001 4.96107 5.38842 5.09329C5.16683 5.22551 4.92386 5.29163 4.65951 5.29163C4.39516 5.29163 4.15219 5.22551 3.93061 5.09329C3.70902 4.96107 3.53214 4.78413 3.39996 4.56246C3.26779 4.34079 3.2017 4.09774 3.2017 3.83329C3.2017 3.56885 3.26779 3.32579 3.39996 3.10413C3.53214 2.88246 3.70902 2.70551 3.93061 2.57329C4.15219 2.44107 4.39516 2.37496 4.65951 2.37496C4.92386 2.37496 5.16683 2.44107 5.38842 2.57329C5.61001 2.70551 5.78689 2.88246 5.91906 3.10413C6.05124 3.32579 6.11732 3.56885 6.11732 3.83329ZM4.65951 5.87496C4.28631 5.87496 3.94421 5.96635 3.63321 6.14913C3.32221 6.3319 3.07536 6.57885 2.89264 6.88996C2.70993 7.20107 2.61857 7.54329 2.61857 7.91663H6.70045C6.70045 7.54329 6.60909 7.20107 6.42638 6.88996C6.24367 6.57885 5.99681 6.3319 5.68581 6.14913C5.37481 5.96635 5.03271 5.87496 4.65951 5.87496Z"
+                        fill="#4B5563"
+                      />
+                    </svg>
+
+                    1234-7656-8765
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <svg
+                      class="w-4 h-4 mr-2"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.24301 0.166707V1.33337H7.74176V0.166707H8.90801V1.33337H11.2405C11.4038 1.33337 11.5418 1.38976 11.6545 1.50254C11.7673 1.61532 11.8236 1.75337 11.8236 1.91671V11.25C11.8236 11.4134 11.7673 11.5514 11.6545 11.6642C11.5418 11.777 11.4038 11.8334 11.2405 11.8334H0.744258C0.580983 11.8334 0.442977 11.777 0.330239 11.6642C0.217502 11.5514 0.161133 11.4134 0.161133 11.25V1.91671C0.161133 1.75337 0.217502 1.61532 0.330239 1.50254C0.442977 1.38976 0.580983 1.33337 0.744258 1.33337H3.07676V0.166707H4.24301ZM10.6574 6.00004H1.32738V10.6667H10.6574V6.00004ZM3.07676 2.50004H1.32738V4.83337H10.6574V2.50004H8.90801V3.66671H7.74176V2.50004H4.24301V3.66671H3.07676V2.50004Z"
+                        fill="#4B5563"
+                      />
+                    </svg>
+
+                    Joined on March 15, 2024
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Address Section -->
+          <div class="bg-gray-50 rounded-[16px] p-3">
+            <div class="flex flex-col items-start">
+              <div class="flex-shrink-0 mt-1 flex gap-1">
+                <svg
+                  class="w-4 h-4"
+                  width="12"
+                  height="15"
+                  viewBox="0 0 12 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.99234 12.8698L9.28362 9.56309C9.88769 8.96753 10.2963 8.26531 10.5095 7.45642C10.7138 6.66531 10.7138 5.8742 10.5095 5.08309C10.2963 4.2742 9.88991 3.56976 9.29028 2.96976C8.69066 2.36976 7.98665 1.96309 7.17827 1.74976C6.38765 1.54531 5.59704 1.54531 4.80642 1.74976C3.99804 1.96309 3.29403 2.36976 2.69441 2.96976C2.09478 3.56976 1.68837 4.2742 1.47517 5.08309C1.27085 5.8742 1.27085 6.66531 1.47517 7.45642C1.68837 8.26531 2.097 8.96753 2.70107 9.56309L5.99234 12.8698ZM5.99234 14.7498L1.75499 10.5098C0.982144 9.74531 0.462469 8.83864 0.195969 7.78976C-0.0705312 6.77642 -0.0705312 5.76309 0.195969 4.74976C0.462469 3.70087 0.979923 2.79198 1.74833 2.02309C2.51674 1.2542 3.42506 0.731977 4.47329 0.456422C5.48599 0.198645 6.49869 0.198645 7.51139 0.456422C8.55963 0.731977 9.46795 1.2542 10.2364 2.02309C11.0048 2.79198 11.5222 3.70087 11.7887 4.74976C12.0552 5.76309 12.0552 6.77642 11.7887 7.78976C11.5222 8.83864 11.0025 9.74531 10.2297 10.5098L5.99234 14.7498ZM5.99234 7.60309C6.23219 7.60309 6.45428 7.54309 6.65859 7.42309C6.86291 7.30309 7.02503 7.14087 7.14496 6.93642C7.26488 6.73198 7.32484 6.50976 7.32484 6.26976C7.32484 6.02976 7.26488 5.80753 7.14496 5.60309C7.02503 5.39864 6.86291 5.23642 6.65859 5.11642C6.45428 4.99642 6.23219 4.93642 5.99234 4.93642C5.75249 4.93642 5.53041 4.99642 5.32609 5.11642C5.12178 5.23642 4.95966 5.39864 4.83973 5.60309C4.71981 5.80753 4.65984 6.02976 4.65984 6.26976C4.65984 6.50976 4.71981 6.73198 4.83973 6.93642C4.95966 7.14087 5.12178 7.30309 5.32609 7.42309C5.53041 7.54309 5.75249 7.60309 5.99234 7.60309ZM5.99234 8.93642C5.51264 8.93642 5.06848 8.81642 4.65984 8.57642C4.25121 8.33642 3.92697 8.01198 3.68712 7.60309C3.44727 7.1942 3.32734 6.74753 3.32734 6.26309C3.32734 5.77864 3.44727 5.3342 3.68712 4.92976C3.92697 4.52531 4.25121 4.20309 4.65984 3.96309C5.06848 3.72309 5.51264 3.60309 5.99234 3.60309C6.47204 3.60309 6.91621 3.72309 7.32484 3.96309C7.73348 4.20309 8.05772 4.52531 8.29757 4.92976C8.53742 5.3342 8.65734 5.77864 8.65734 6.26309C8.65734 6.74753 8.53742 7.1942 8.29757 7.60309C8.05772 8.01198 7.73348 8.33642 7.32484 8.57642C6.91621 8.81642 6.47204 8.93642 5.99234 8.93642Z"
+                    fill="#111827"
+                  />
+                </svg>
+
+                <h3 class="text-sm font-medium text-gray-900 mb-2">Address</h3>
+              </div>
+              <div>
+                <div class="text-sm text-gray-600 space-y-1">
+                  <p>1234 Business Street</p>
+                  <p>New York, NY 10001</p>
+                  <p>United States</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Tab Contents (Hidden by default) -->
+        <div id="documents-content" class="tab-content hidden">
+          <div class="text-center py-12">
+            <svg
+              class="w-12 h-12 text-gray-400 mx-auto mb-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">Documents</h3>
+            <p class="text-gray-500">User documents will be displayed here.</p>
+          </div>
+        </div>
+
+        <div id="enrollments-content" class="tab-content hidden">
+          <div class="text-center py-12">
+            <svg
+              class="w-12 h-12 text-gray-400 mx-auto mb-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              ></path>
+            </svg>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">Enrollments</h3>
+            <p class="text-gray-500">
+              User enrollments will be displayed here.
+            </p>
+          </div>
+        </div>
+
+        <div id="payments-content" class="tab-content hidden">
+          <div class="text-center py-12">
+            <svg
+              class="w-12 h-12 text-gray-400 mx-auto mb-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+              ></path>
+            </svg>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">Payments</h3>
+            <p class="text-gray-500">Payment history will be displayed here.</p>
+          </div>
+        </div>
+
+        <div id="timeline-content" class="tab-content hidden">
+          <div class="text-center py-12">
+            <svg
+              class="w-12 h-12 text-gray-400 mx-auto mb-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">Timeline</h3>
+            <p class="text-gray-500">
+              User activity timeline will be displayed here.
+            </p>
+          </div>
+        </div>
+
+        <div id="withdrawals-content" class="tab-content hidden">
+          <div class="text-center py-12">
+            <svg
+              class="w-12 h-12 text-gray-400 mx-auto mb-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+              ></path>
+            </svg>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">Withdrawals</h3>
+            <p class="text-gray-500">
+              Withdrawal history will be displayed here.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function closeUserDetails() {
+        alert("Closing user details");
+        // In a real application, this would close the modal or navigate back
+      }
+
+      function editUser() {
+        alert("Opening edit user form");
+        // In a real application, this would open the edit user form
+      }
+
+      function switchTab(clickedTab, tabName) {
+        // Remove active class from all tabs
+        document.querySelectorAll(".tab-button").forEach((tab) => {
+          tab.classList.remove("active", "border-blue-500", "text-blue-600");
+          tab.classList.add("border-transparent", "text-gray-500");
+        });
+
+        // Add active class to clicked tab
+        clickedTab.classList.add("active", "border-blue-500", "text-blue-600");
+        clickedTab.classList.remove("border-transparent", "text-gray-500");
+
+        // Hide all tab contents
+        document.querySelectorAll(".tab-content").forEach((content) => {
+          content.classList.add("hidden");
+        });
+
+        // Show selected tab content
+        document
+          .getElementById(tabName + "-content")
+          .classList.remove("hidden");
+      }
+
+      // Initialize the first tab as active
+      document.addEventListener("DOMContentLoaded", function () {
+        // The Personal tab is already active by default in the HTML
+      });
+    </script>
+  </body>
+</html>

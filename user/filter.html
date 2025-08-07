@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filters Sidebar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              roboto: ["Roboto", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-100 font-roboto flex justify-end">
+    <div class="bg-white w-80 h-screen overflow-y-auto shadow-lg ml-auto">
+      <!-- Header -->
+      <div
+        class="flex items-center justify-between p-4 border-b border-gray-200 flex-shrink-0"
+      >
+        <h2 class="text-lg font-semibold text-gray-900">Filters</h2>
+        <button
+          class="text-gray-400 text-xl hover:text-gray-600 transition-colors"
+          onclick="closeFilters()"
+          type="button"
+        >
+          ×
+        </button>
+      </div>
+
+      <!-- Filter Content -->
+      <div class="p-4 space-y-6 overflow-y-auto custom-scrollbar flex-grow">
+        <!-- Documents Section -->
+        <div>
+          <h3 class="text-sm font-medium text-gray-900 mb-3">Documents</h3>
+          <div class="space-y-2">
+            <label class="flex items-center">
+              <input
+                type="checkbox"
+                class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+              <span class="ml-2 text-sm text-gray-700">Has Image</span>
+            </label>
+            <label class="flex items-center">
+              <input
+                type="checkbox"
+                class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+              <span class="ml-2 text-sm text-gray-700">Has Aadhar</span>
+            </label>
+            <label class="flex items-center">
+              <input
+                type="checkbox"
+                class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+              <span class="ml-2 text-sm text-gray-700">Has Agreement</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Kameti Enrollments Section -->
+        <div>
+          <h3 class="text-sm font-medium text-gray-900 mb-3">
+            Kameti Enrollments
+          </h3>
+          <select
+            class="w-full p-2 border border-gray-300 rounded-[16px] text-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          >
+            <option>Select Kameti Enrollments</option>
+            <option>Monthly Kameti - ₹5,000</option>
+            <option>Monthly Kameti - ₹10,000</option>
+            <option>Monthly Kameti - ₹15,000</option>
+          </select>
+
+          <!-- Selected Tags -->
+          <div class="mt-3 space-y-2">
+            <div
+              class="inline-flex items-center bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-[8px]"
+            >
+              <span>Monthly Kameti - ₹5,000</span>
+              <button
+                class="ml-2 text-blue-600 hover:text-blue-800"
+                onclick="removeTag(this)"
+              >
+                ×
+              </button>
+            </div>
+            <div
+              class="inline-flex items-center bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-[8px]"
+            >
+              <span>Monthly Kameti - ₹10,000</span>
+              <button
+                class="ml-2 text-blue-600 hover:text-blue-800"
+                onclick="removeTag(this)"
+              >
+                ×
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Status Section -->
+        <div>
+          <h3 class="text-sm font-medium text-gray-900 mb-3">Payment Status</h3>
+          <div class="space-y-2">
+            <label class="flex items-center">
+              <input
+                type="checkbox"
+                class="w-4 h-4 text-blue-600 accent-gray-300 rounded focus:ring-blue-500"
+              />
+              <span class="ml-2 text-sm text-gray-700"
+                >Has Overdue Payment</span
+              >
+            </label>
+            <label class="flex items-center">
+              <input
+                type="checkbox"
+                class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+              <span class="ml-2 text-sm text-gray-700"
+                >Payment in Installments</span
+              >
+            </label>
+            <label class="flex items-center">
+              <input
+                type="checkbox"
+                class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+              <span class="ml-2 text-sm text-gray-700"
+                >Has Advanced Payments</span
+              >
+            </label>
+          </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div>
+          <h3 class="text-sm font-medium text-gray-900 mb-3">Timeline</h3>
+
+          <!-- Create Date -->
+          <div class="mb-4">
+            <label class="block text-xs font-medium text-gray-700 mb-2"
+              >Create Date</label
+            >
+            <div class="flex items-center space-x-2">
+              <div class="relative flex-1">
+                <input
+                  type="text"
+                  placeholder="-/-/-"
+                  class="w-full p-2 border border-gray-300 rounded-[15px] text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+                <button
+                  class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 1.375H11.375V0.125H10.125V1.375H3.875V0.125H2.625V1.375H2C1.3125 1.375 0.75 1.9375 0.75 2.625V12.625C0.75 13.3125 1.3125 13.875 2 13.875H12C12.6875 13.875 13.25 13.3125 13.25 12.625V2.625C13.25 1.9375 12.6875 1.375 12 1.375ZM12 12.625H2V4.5H12V12.625Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <span class="text-sm text-gray-500">to</span>
+              <div class="relative flex-1">
+                <input
+                  type="text"
+                  placeholder="-/-/-"
+                  class="w-full p-2 border border-gray-300 rounded-[15px] text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+                <button
+                  class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 1.375H11.375V0.125H10.125V1.375H3.875V0.125H2.625V1.375H2C1.3125 1.375 0.75 1.9375 0.75 2.625V12.625C0.75 13.3125 1.3125 13.875 2 13.875H12C12.6875 13.875 13.25 13.3125 13.25 12.625V2.625C13.25 1.9375 12.6875 1.375 12 1.375ZM12 12.625H2V4.5H12V12.625Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Last Payment Date -->
+          <div class="mb-4">
+            <label class="block text-xs font-medium text-gray-700 mb-2"
+              >Last Payment Date</label
+            >
+            <div class="flex items-center space-x-2">
+              <div class="relative flex-1">
+                <input
+                  type="text"
+                  placeholder="-/-/-"
+                  class="w-full p-2 border border-gray-300 rounded-[15px] text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+                <button
+                  class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 1.375H11.375V0.125H10.125V1.375H3.875V0.125H2.625V1.375H2C1.3125 1.375 0.75 1.9375 0.75 2.625V12.625C0.75 13.3125 1.3125 13.875 2 13.875H12C12.6875 13.875 13.25 13.3125 13.25 12.625V2.625C13.25 1.9375 12.6875 1.375 12 1.375ZM12 12.625H2V4.5H12V12.625Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <span class="text-sm text-gray-500">to</span>
+              <div class="relative flex-1">
+                <input
+                  type="text"
+                  placeholder="-/-/-"
+                  class="w-full p-2 border border-gray-300 rounded-[15px] text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+                <button
+                  class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 1.375H11.375V0.125H10.125V1.375H3.875V0.125H2.625V1.375H2C1.3125 1.375 0.75 1.9375 0.75 2.625V12.625C0.75 13.3125 1.3125 13.875 2 13.875H12C12.6875 13.875 13.25 13.3125 13.25 12.625V2.625C13.25 1.9375 12.6875 1.375 12 1.375ZM12 12.625H2V4.5H12V12.625Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enrolled Date -->
+          <div class="mb-4">
+            <label class="block text-xs font-medium text-gray-700 mb-2"
+              >Enrolled Date</label
+            >
+            <div class="flex items-center space-x-2">
+              <div class="relative flex-1">
+                <input
+                  type="text"
+                  placeholder="-/-/-"
+                  class="w-full p-2 border border-gray-300 rounded-[15px] text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+                <button
+                  class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 1.375H11.375V0.125H10.125V1.375H3.875V0.125H2.625V1.375H2C1.3125 1.375 0.75 1.9375 0.75 2.625V12.625C0.75 13.3125 1.3125 13.875 2 13.875H12C12.6875 13.875 13.25 13.3125 13.25 12.625V2.625C13.25 1.9375 12.6875 1.375 12 1.375ZM12 12.625H2V4.5H12V12.625Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <span class="text-sm text-gray-500">to</span>
+              <div class="relative flex-1">
+                <input
+                  type="text"
+                  placeholder="-/-/-"
+                  class="w-full p-2 border border-gray-300 rounded-[15px] text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+                <button
+                  class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 1.375H11.375V0.125H10.125V1.375H3.875V0.125H2.625V1.375H2C1.3125 1.375 0.75 1.9375 0.75 2.625V12.625C0.75 13.3125 1.3125 13.875 2 13.875H12C12.6875 13.875 13.25 13.3125 13.25 12.625V2.625C13.25 1.9375 12.6875 1.375 12 1.375ZM12 12.625H2V4.5H12V12.625Z"
+                      fill="black"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status Section -->
+        <div>
+          <h3 class="text-sm font-medium text-gray-900 mb-3">Status</h3>
+          <div class="space-y-2">
+            <label class="flex items-center">
+              <input
+                type="checkbox"
+                class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+              <span class="ml-2 text-sm text-gray-700">Active</span>
+            </label>
+            <label class="flex items-center">
+              <input
+                type="checkbox"
+                class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+              <span class="ml-2 text-sm text-gray-700">Inactive</span>
+            </label>
+            <label class="flex items-center">
+              <input
+                type="checkbox"
+                class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+              <span class="ml-2 text-sm text-gray-700">Defaulter</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="p-4 border-t border-gray-200 bg-white sticky bottom-0">
+        <div class="flex space-x-3">
+          <button
+            type="button"
+            class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors"
+            onclick="applyFilters()"
+          >
+            Apply Filters
+          </button>
+          <button
+            type="button"
+            class="flex-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors"
+            onclick="resetFilters()"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function closeFilters() {
+        alert("Closing filters sidebar");
+        // In a real application, this would close the sidebar
+      }
+
+      function removeTag(button) {
+        button.parentElement.remove();
+      }
+
+      function applyFilters() {
+        // Collect all filter values
+        const filters = {
+          documents: [],
+          kametiEnrollments: [],
+          paymentStatus: [],
+          timeline: {
+            createDate: { from: "", to: "" },
+            lastPaymentDate: { from: "", to: "" },
+            enrolledDate: { from: "", to: "" },
+          },
+          status: [],
+        };
+
+        // Get document filters
+        document
+          .querySelectorAll('input[type="checkbox"]:checked')
+          .forEach((checkbox) => {
+            const label = checkbox.nextElementSibling.textContent;
+            if (
+              checkbox.closest("div").previousElementSibling?.textContent ===
+              "Documents"
+            ) {
+              filters.documents.push(label);
+            } else if (
+              checkbox.closest("div").previousElementSibling?.textContent ===
+              "Payment Status"
+            ) {
+              filters.paymentStatus.push(label);
+            } else if (
+              checkbox.closest("div").previousElementSibling?.textContent ===
+              "Status"
+            ) {
+              filters.status.push(label);
+            }
+          });
+
+        // Get selected Kameti enrollments
+        document.querySelectorAll(".bg-blue-100").forEach((tag) => {
+          filters.kametiEnrollments.push(tag.querySelector("span").textContent);
+        });
+
+        console.log("Applied Filters:", filters);
+        alert("Filters applied successfully!");
+      }
+
+      function resetFilters() {
+        // Reset all checkboxes
+        document
+          .querySelectorAll('input[type="checkbox"]')
+          .forEach((checkbox) => {
+            checkbox.checked = false;
+          });
+
+        // Reset all date inputs
+        document.querySelectorAll('input[type="text"]').forEach((input) => {
+          input.value = "";
+        });
+
+        // Reset dropdown
+        document.querySelector("select").selectedIndex = 0;
+
+        // Remove all tags
+        document.querySelectorAll(".bg-blue-100").forEach((tag) => {
+          tag.remove();
+        });
+
+        alert("All filters have been reset");
+      }
+
+      // Add date picker functionality (basic implementation)
+      document
+        .querySelectorAll('input[placeholder="-/-/-"]')
+        .forEach((input) => {
+          input.addEventListener("focus", function () {
+            this.type = "date";
+          });
+
+          input.addEventListener("blur", function () {
+            if (!this.value) {
+              this.type = "text";
+            }
+          });
+        });
+
+      // Add functionality to dropdown for adding Kameti enrollments
+      document.querySelector("select").addEventListener("change", function () {
+        if (this.value && this.value !== "Select Kameti Enrollments") {
+          // Check if tag already exists
+          const existingTags = Array.from(
+            document.querySelectorAll(".bg-blue-100 span")
+          ).map((span) => span.textContent);
+          if (!existingTags.includes(this.value)) {
+            // Create new tag
+            const tagContainer = this.parentElement.querySelector(".mt-3");
+            const newTag = document.createElement("div");
+            newTag.className =
+              "inline-flex items-center bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full ml-2";
+            newTag.innerHTML = `
+                        <span>${this.value}</span>
+                        <button class="ml-2 text-blue-600 hover:text-blue-800" onclick="removeTag(this)">×</button>
+                    `;
+            tagContainer.appendChild(newTag);
+          }
+          this.selectedIndex = 0; // Reset dropdown
+        }
+      });
+    </script>
+  </body>
+</html>

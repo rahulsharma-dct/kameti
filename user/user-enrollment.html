@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              roboto: ["Roboto", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 min-h-screen font-roboto">
+    <div
+      class="bg-white max-w-[80rem] mx-auto shadow-lg min-h-screen mt-3 mb-3 rounded-[16px]"
+    >
+      <!-- Header -->
+      <div
+        class="flex items-center justify-between p-6 border-b border-gray-200"
+      >
+        <h1 class="text-xl font-semibold text-gray-900">User Details</h1>
+        <button
+          class="text-gray-400 text-2xl hover:text-gray-600 transition-colors"
+          onclick="closeUserDetails()"
+          type="button"
+        >
+          ×
+        </button>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="border-b border-gray-200">
+        <nav class="flex space-x-6 px-6 py-4">
+          <button
+            class="px-4 py-2 text-gray-600 text-sm font-medium hover:text-gray-800 transition-colors tab-button"
+            onclick="switchTab(this, 'personal')"
+          >
+            Personal
+          </button>
+          <button
+            class="px-4 py-2 text-gray-600 text-sm font-medium hover:text-gray-800 transition-colors tab-button"
+            onclick="switchTab(this, 'documents')"
+          >
+            Documents
+          </button>
+          <button
+            class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md tab-button active"
+            onclick="switchTab(this, 'enrollments')"
+          >
+            Enrollments
+          </button>
+          <button
+            class="px-4 py-2 text-gray-600 text-sm font-medium hover:text-gray-800 transition-colors tab-button"
+            onclick="switchTab(this, 'payments')"
+          >
+            Payments
+          </button>
+          <button
+            class="px-4 py-2 text-gray-600 text-sm font-medium hover:text-gray-800 transition-colors tab-button"
+            onclick="switchTab(this, 'timeline')"
+          >
+            Timeline
+          </button>
+          <button
+            class="px-4 py-2 text-gray-600 text-sm font-medium hover:text-gray-800 transition-colors tab-button"
+            onclick="switchTab(this, 'withdrawals')"
+          >
+            Withdrawals
+          </button>
+        </nav>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="p-6">
+        <!-- Documents Tab Content -->
+        <div id="documents-content" class="tab-content hidden">
+          <div class="space-y-6">
+            <!-- Aadhar Card Document -->
+            <div
+              class="flex items-start space-x-4 p-4 border border-gray-200 rounded-lg"
+            >
+              <!-- Document Thumbnail -->
+              <div class="flex-shrink-0">
+                <img
+                  src="/placeholder.svg?height=120&width=160"
+                  alt="Aadhar Card"
+                  class="w-40 h-30 rounded-lg object-cover border border-gray-200"
+                />
+              </div>
+
+              <!-- Document Info -->
+              <div class="flex-1">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <div class="flex items-center space-x-2 mb-2">
+                      <svg
+                        class="w-5 h-5 text-blue-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        ></path>
+                      </svg>
+                      <h3 class="text-lg font-semibold text-gray-900">
+                        Aadhar Card
+                      </h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">
+                      Uploaded on July 15, 2025
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div class="flex space-x-3">
+                      <button
+                        class="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                        onclick="viewDocument('aadhar')"
+                      >
+                        View Document
+                      </button>
+                      <button
+                        class="text-gray-600 hover:text-gray-800 text-sm font-medium"
+                        onclick="reuploadDocument('aadhar')"
+                      >
+                        Re-upload
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Status and Edit -->
+                  <div class="flex items-center space-x-2">
+                    <span
+                      class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full"
+                    >
+                      Uploaded
+                    </span>
+                    <button
+                      class="text-gray-400 hover:text-gray-600"
+                      onclick="editDocument('aadhar')"
+                      title="Edit Document"
+                    >
+                      <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Agreement Document -->
+            <div
+              class="flex items-start space-x-4 p-4 border border-gray-200 rounded-lg"
+            >
+              <!-- Document Thumbnail -->
+              <div class="flex-shrink-0">
+                <img
+                  src="/placeholder.svg?height=120&width=160"
+                  alt="Agreement"
+                  class="w-40 h-30 rounded-lg object-cover border border-gray-200"
+                />
+              </div>
+
+              <!-- Document Info -->
+              <div class="flex-1">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <div class="flex items-center space-x-2 mb-2">
+                      <svg
+                        class="w-5 h-5 text-green-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        ></path>
+                      </svg>
+                      <h3 class="text-lg font-semibold text-gray-900">
+                        Agreement
+                      </h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">
+                      Uploaded on July 15, 2025
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div class="flex space-x-3">
+                      <button
+                        class="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                        onclick="viewDocument('agreement')"
+                      >
+                        View Document
+                      </button>
+                      <button
+                        class="text-gray-600 hover:text-gray-800 text-sm font-medium"
+                        onclick="reuploadDocument('agreement')"
+                      >
+                        Re-upload
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Status and Edit -->
+                  <div class="flex items-center space-x-2">
+                    <span
+                      class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full"
+                    >
+                      Uploaded
+                    </span>
+                    <button
+                      class="text-gray-400 hover:text-gray-600"
+                      onclick="editDocument('agreement')"
+                      title="Edit Document"
+                    >
+                      <svg
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Profile Photo (Not Uploaded) -->
+            <div
+              class="flex items-start space-x-4 p-4 border border-gray-200 rounded-lg"
+            >
+              <!-- Placeholder Thumbnail -->
+              <div class="flex-shrink-0">
+                <div
+                  class="w-40 h-30 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center bg-gray-50"
+                >
+                  <svg
+                    class="w-12 h-12 text-gray-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Document Info -->
+              <div class="flex-1">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <div class="flex items-center space-x-2 mb-2">
+                      <svg
+                        class="w-5 h-5 text-purple-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                        ></path>
+                      </svg>
+                      <h3 class="text-lg font-semibold text-gray-900">
+                        Profile Photo
+                      </h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">
+                      No document uploaded yet
+                    </p>
+
+                    <!-- Upload Button -->
+                    <button
+                      class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors"
+                      onclick="uploadPhoto()"
+                    >
+                      Upload Photo
+                    </button>
+                  </div>
+
+                  <!-- Status -->
+                  <div class="flex items-center">
+                    <span
+                      class="px-2 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded-full"
+                    >
+                      Not Uploaded
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Tab Contents (Hidden by default) -->
+        <div id="enrollments-content" class="tab-content">
+          <!-- Search and Filters -->
+          <div class="bg-white rounded-2xl p-6 border border-gray-200 mb-7">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+              <!-- Search Input - Full Width -->
+              <div class="relative flex-1">
+                <svg
+                  class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  ></path>
+                </svg>
+                <input
+                  type="text"
+                  placeholder="Search users by name, email, or phone..."
+                  class="w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-[16px] text-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-white"
+                />
+              </div>
+
+              <!-- More Filters Button -->
+              <button
+                id="filter-button"
+                class="flex items-center justify-center px-4 py-3.5 text-gray-600 hover:text-gray-900 font-medium text-sm border border-gray-200 rounded-[16px] hover:bg-gray-50 transition-colors duration-200 whitespace-nowrap lg:flex-shrink-0"
+              >
+                <svg
+                  class="w-4 h-4 mr-2.5"
+                  width="12"
+                  height="8"
+                  viewBox="0 0 12 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.64633 7.5H6.97883V6.33333H4.64633V7.5ZM0.564453 0.5V1.66667H11.0607V0.5H0.564453ZM2.31383 4.58333H9.31133V3.41667H2.31383V4.58333Z"
+                    fill="#4B5563"
+                  />
+                </svg>
+
+                More Filters
+              </button>
+            </div>
+          </div>
+
+          <!-- Example in different container widths -->
+          <div class="mt-8 space-y-6 hidden">
+            <h3 class="text-lg font-semibold text-gray-900">
+              Different Container Widths:
+            </h3>
+
+            <!-- Small Container -->
+            <div class="max-w-2xl">
+              <h4 class="text-sm font-medium text-gray-700 mb-3">
+                Small Container
+              </h4>
+              <div class="bg-white rounded-2xl p-6 shadow-sm">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+                  <div class="relative flex-1">
+                    <svg
+                      class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      ></path>
+                    </svg>
+                    <input
+                      type="text"
+                      placeholder="Search users by name, email, or phone..."
+                      class="w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-xl text-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-white"
+                    />
+                  </div>
+                  <button
+                    class="flex items-center justify-center px-4 py-3.5 text-gray-600 hover:text-gray-900 font-medium text-sm border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors duration-200 whitespace-nowrap lg:flex-shrink-0"
+                  >
+                    <svg
+                      class="w-4 h-4 mr-2.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z"
+                      ></path>
+                    </svg>
+                    More Filters
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Large Container -->
+            <div class="max-w-6xl">
+              <h4 class="text-sm font-medium text-gray-700 mb-3">
+                Large Container
+              </h4>
+              <div class="bg-white rounded-2xl p-6 shadow-sm">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+                  <div class="relative flex-1">
+                    <svg
+                      class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      ></path>
+                    </svg>
+                    <input
+                      type="text"
+                      placeholder="Search users by name, email, or phone..."
+                      class="w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-xl text-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-white"
+                    />
+                  </div>
+                  <button
+                    class="flex items-center justify-center px-4 py-3.5 text-gray-600 hover:text-gray-900 font-medium text-sm border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors duration-200 whitespace-nowrap lg:flex-shrink-0"
+                  >
+                    <svg
+                      class="w-4 h-4 mr-2.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z"
+                      ></path>
+                    </svg>
+                    More Filters
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kameti Enrollments Section -->
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-lg font-semibold text-gray-900">
+              Kameti Enrollments
+            </h2>
+            <button
+              class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              + Enroll in New Kameti
+            </button>
+          </div>
+
+          <!-- Enrollments Table -->
+          <div
+            class="bg-white border border-gray-200 rounded-lg overflow-hidden"
+          >
+            <table class="w-full">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Kameti
+                    <svg
+                      class="inline w-3 h-3 ml-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 9l4-4 4 4m0 6l-4 4-4-4"
+                      ></path>
+                    </svg>
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Enrolled On
+                    <svg
+                      class="inline w-3 h-3 ml-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 9l4-4 4 4m0 6l-4 4-4-4"
+                      ></path>
+                    </svg>
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Status
+                    <svg
+                      class="inline w-3 h-3 ml-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 9l4-4 4 4m0 6l-4 4-4-4"
+                      ></path>
+                    </svg>
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Installments
+                    <svg
+                      class="inline w-3 h-3 ml-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 9l4-4 4 4m0 6l-4 4-4-4"
+                      ></path>
+                    </svg>
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Current Due
+                    <svg
+                      class="inline w-3 h-3 ml-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 9l4-4 4 4m0 6l-4 4-4-4"
+                      ></path>
+                    </svg>
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Fine
+                    <svg
+                      class="inline w-3 h-3 ml-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 9l4-4 4 4m0 6l-4 4-4-4"
+                      ></path>
+                    </svg>
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <!-- Row 1 - Monthly Kameti A (Unpaid) -->
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div>
+                      <div class="text-sm font-medium text-blue-600">
+                        Monthly Kameti A
+                      </div>
+                      <div class="text-sm text-gray-500">₹2,100 × 5 months</div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    01-Mar-2025
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full"
+                    >
+                      Unpaid
+                    </span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    2 of 5
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    -
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600">
+                    ₹100
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <button
+                      class="text-gray-400 hover:text-gray-600"
+                      onclick="toggleDropdown(this)"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Row 2 - Monthly Kameti A (Withdrawn) -->
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div>
+                      <div class="text-sm font-medium text-blue-600">
+                        Monthly Kameti A
+                      </div>
+                      <div class="text-sm text-gray-500">₹2,100 × 5 months</div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    15-Jan-2025
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="px-2 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded-full"
+                    >
+                      Withdrawn
+                    </span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    4 of 8
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600">
+                    ₹2,750
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600">
+                    ₹200
+                  </td>
+                  <td
+                    class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 relative"
+                  >
+                    <button
+                      class="text-gray-400 hover:text-gray-600"
+                      onclick="toggleDropdown(this)"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
+                        ></path>
+                      </svg>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div
+                      class="dropdown-menu hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10 border border-gray-200"
+                    >
+                      <div class="py-1">
+                        <button
+                          class="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          <svg
+                            class="w-4 h-4 mr-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                            ></path>
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                            ></path>
+                          </svg>
+                          View Details
+                        </button>
+                        <button
+                          class="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          <svg
+                            class="w-4 h-4 mr-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                            ></path>
+                          </svg>
+                          Edit Enrollment
+                        </button>
+                        <button
+                          class="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          <svg
+                            class="w-4 h-4 mr-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                            ></path>
+                          </svg>
+                          Add Payment
+                        </button>
+                        <button
+                          class="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          <svg
+                            class="w-4 h-4 mr-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                            ></path>
+                          </svg>
+                          Make Withdrawal
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Row 3 - Weekly Kameti C (Completed) -->
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div>
+                      <div class="text-sm font-medium text-blue-600">
+                        Weekly Kameti C
+                      </div>
+                      <div class="text-sm text-gray-500">
+                        ₹1,000 × 12 months
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    10-Feb-2025
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full"
+                    >
+                      Completed
+                    </span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    12 of 12
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    -
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    -
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <button
+                      class="text-gray-400 hover:text-gray-600"
+                      onclick="toggleDropdown(this)"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Row 4 - Monthly Kameti D (Dropped) -->
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div>
+                      <div class="text-sm font-medium text-blue-600">
+                        Monthly Kameti D
+                      </div>
+                      <div class="text-sm text-gray-500">
+                        ₹3,000 × 10 months
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    05-Apr-2025
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="px-2 py-1 bg-red-100 text-red-800 text-xs font-medium rounded-full"
+                    >
+                      Dropped
+                    </span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    3 of 10
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600">
+                    ₹3,000
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600">
+                    ₹300
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <button
+                      class="text-gray-400 hover:text-gray-600"
+                      onclick="toggleDropdown(this)"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination -->
+          <div class="flex items-center justify-between mt-6">
+            <div class="text-sm text-gray-500">Showing 1 to 10 of 10 users</div>
+            <div class="flex items-center space-x-2">
+              <button
+                class="px-3 py-2 bg-blue-600 text-white text-sm rounded-md"
+              >
+                1
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function closeUserDetails() {
+        alert("Closing user details");
+        // In a real application, this would close the modal or navigate back
+      }
+
+      function editUser() {
+        alert("Opening edit user form");
+        // In a real application, this would open the edit user form
+      }
+
+      function switchTab(clickedTab, tabName) {
+        // Remove active class from all tabs
+        document.querySelectorAll(".tab-button").forEach((tab) => {
+          tab.classList.remove("active", "bg-blue-600", "text-white");
+          tab.classList.add("text-gray-600");
+        });
+
+        // Add active class to clicked tab
+        clickedTab.classList.add("active", "bg-blue-600", "text-white");
+        clickedTab.classList.remove("text-gray-600");
+
+        // Hide all tab contents
+        document.querySelectorAll(".tab-content").forEach((content) => {
+          content.classList.add("hidden");
+        });
+
+        // Show selected tab content
+        document
+          .getElementById(tabName + "-content")
+          .classList.remove("hidden");
+      }
+
+      function toggleDropdown(button) {
+        // Close all other dropdowns
+        document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+          if (menu !== button.nextElementSibling) {
+            menu.classList.add("hidden");
+          }
+        });
+
+        // Toggle current dropdown
+        const dropdown = button.nextElementSibling;
+        if (dropdown) {
+          dropdown.classList.toggle("hidden");
+        }
+      }
+
+      // Close dropdowns when clicking outside
+      document.addEventListener("click", function (event) {
+        if (!event.target.closest(".relative")) {
+          document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+            menu.classList.add("hidden");
+          });
+        }
+      });
+
+      // Document action functions
+      function viewDocument(docType) {
+        alert(`Viewing ${docType} document`);
+        // In a real application, this would open the document viewer
+      }
+
+      function reuploadDocument(docType) {
+        alert(`Re-uploading ${docType} document`);
+        // In a real application, this would open the file upload dialog
+      }
+
+      function editDocument(docType) {
+        alert(`Editing ${docType} document`);
+        // In a real application, this would open the document editor
+      }
+
+      function uploadPhoto() {
+        alert("Uploading profile photo");
+        // In a real application, this would open the file upload dialog
+      }
+
+      // Initialize the Enrollments tab as active
+      document.addEventListener("DOMContentLoaded", function () {
+        switchTab(document.querySelector(".tab-button.active"), "enrollments");
+      });
+    </script>
+  </body>
+</html>
