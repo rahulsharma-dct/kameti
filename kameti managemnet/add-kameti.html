@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create New Kameti - Progress Stepper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .stepper-bar {
+        flex: 1;
+        height: 2.5px;
+        margin: 0 6px;
+        border-radius: 2px;
+        background-color: #e5e7eb;
+        position: relative;
+        top: 0;
+        overflow: hidden;
+      }
+      .stepper-bar-active {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 45%;
+        background: #10b981;
+        border-radius: 2px;
+        height: 4px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-100 min-h-screen flex items-center justify-center font-sans"
+  >
+    <div class="max-w-[49rem] w-full bg-white rounded-2xl shadow-lg">
+      <!-- Page Title Row -->
+      <div class="flex items-center justify-between mb-5 py-6 px-6 border-b">
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-xl font-semibold text-gray-900"
+            >Create New Kameti</span
+          >
+          <span class="text-gray-500 text-sm">Step 1 of 4</span>
+        </div>
+        <button
+          class="text-gray-400 hover:text-gray-700 text-xl font-bold leading-none"
+        >
+          &times;
+        </button>
+      </div>
+      <!-- PROGRESS SECTION: your exact code -->
+      <div class="w-full px-5 pb-4 border-b">
+        <div class="flex items-center">
+          <!-- Step 1: Active -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-green-500 text-white font-semibold text-base"
+            >
+              1
+            </div>
+          </div>
+          <!-- Bar (active) -->
+          <div class="stepper-bar relative">
+            <div class="stepper-bar-active"></div>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 text-gray-500 font-semibold text-base"
+            >
+              2
+            </div>
+          </div>
+          <!-- Bar -->
+          <div class="stepper-bar"></div>
+          <!-- Step 3 -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 text-gray-500 font-semibold text-base"
+            >
+              3
+            </div>
+          </div>
+          <!-- Bar -->
+          <div class="stepper-bar"></div>
+          <!-- Step 4 -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 text-gray-500 font-semibold text-base"
+            >
+              4
+            </div>
+          </div>
+        </div>
+        <!-- LABELS ROW (as in your image) -->
+        <div class="flex justify-between mt-2">
+          <div class="text-base font-medium text-green-600">Basic Details</div>
+          <div class="text-gray-500 text-base font-normal">
+            Withdrawal Details
+          </div>
+          <div class="text-gray-500 text-base font-normal mr-2">
+            Kameti Title
+          </div>
+          <div class="text-gray-500 text-base font-normal">Review</div>
+        </div>
+      </div>
+      <!-- Form Content (Pixel-Perfect Match with Image) -->
+      <div class="mt-7 mx-6 mb-6">
+        <div class="bg-white rounded-xl">
+          <h2 class="text-[20px] font-semibold text-gray-900 mb-6">
+            Basic Kameti Details
+          </h2>
+          <!-- Total Budget Amount -->
+          <label class="block text-[16px] font-medium text-gray-800 mb-2"
+            >Total Budget Amount</label
+          >
+          <div class="relative mb-5">
+            <span
+              class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-semibold"
+              >$</span
+            >
+            <input
+              type="text"
+              placeholder="Enter total budget amount"
+              class="pl-9 pr-4 py-3 w-full rounded-xl bg-gray-50 border border-gray-200 focus:outline-none text-gray-700 text-base font-normal placeholder-gray-400"
+            />
+          </div>
+          <!-- Duration (Months) -->
+          <label class="block text-[16px] font-medium text-gray-800 mb-2"
+            >Duration (Months)</label
+          >
+          <input
+            type="text"
+            placeholder="Enter number of months"
+            class="pl-4 pr-4 py-3 w-full rounded-xl bg-gray-50 border border-gray-200 focus:outline-none text-gray-700 text-base font-normal placeholder-gray-400 mb-5"
+          />
+          <!-- Monthly Installment -->
+          <label class="block text-[16px] font-medium text-gray-800 mb-2"
+            >Monthly Installment</label
+          >
+          <div class="relative mb-8">
+            <span
+              class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-semibold"
+              >$</span
+            >
+            <input
+              type="text"
+              placeholder="Calculated automatically"
+              class="pl-9 pr-4 py-3 w-full rounded-xl bg-gray-50 border border-gray-200 text-gray-400 text-base font-normal placeholder-gray-400"
+              disabled
+            />
+          </div>
+          <!-- Button Row -->
+          <div class="flex justify-end gap-4 mt-6 pb-1">
+            <button
+              type="button"
+              class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-xl px-7 py-2"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl px-7 py-2"
+            >
+              Next &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

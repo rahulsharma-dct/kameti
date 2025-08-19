@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>March 2024 Kameti - Version History</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen font-sans">
+    <div
+      class="max-w-6xl mx-auto pt-5 pb-12 mt-4 border rounded-xl shadow-xl bg-white"
+    >
+      <!-- Header -->
+      <div class="flex items-center justify-between mb-2 px-4">
+        <h1 class="text-gray-900 text-[18px] font-semibold">
+          March 2024 Kameti
+        </h1>
+        <button
+          class="text-gray-400 hover:text-gray-700 text-2xl font-bold leading-none"
+        >
+          &times;
+        </button>
+      </div>
+      <!-- Versions Tabs -->
+      <div
+        class="flex justify-between items-center space-x-2 mt-3 text-sm font-medium px-4"
+      >
+        <div class="flex gap-2 bg-gray-100 p-1 rounded-md">
+          <button class="rounded bg-white px-3 py-1 text-blue-700">v3</button>
+          <button
+            class="rounded bg-gray-100 px-3 py-1 text-gray-600 hover:text-gray-800"
+          >
+            v2
+          </button>
+          <button
+            class="rounded bg-gray-100 px-3 py-1 text-gray-600 hover:text-gray-800"
+          >
+            v1
+          </button>
+        </div>
+        <div class="ml-auto flex items-center space-x-3">
+          <span
+            class="text-xs rounded-full bg-blue-100 text-blue-700 px-2.5 py-1"
+            >v3 Latest</span
+          >
+          <a
+            href="#"
+            class="flex items-center space-x-1 text-blue-600 text-xs hover:underline"
+          >
+            <svg
+              width="13"
+              height="11"
+              viewBox="0 0 13 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.30941 0C7.33571 0 8.30759 0.233334 9.22504 0.7C10.1036 1.15111 10.8442 1.77528 11.4467 2.5725C12.0493 3.36972 12.44 4.26222 12.6188 5.25C12.44 6.23778 12.0493 7.13028 11.4467 7.9275C10.8442 8.72472 10.1036 9.34889 9.22504 9.8C8.30759 10.2667 7.33571 10.5 6.30941 10.5C5.28311 10.5 4.31124 10.2667 3.39379 9.8C2.51521 9.34889 1.77464 8.72472 1.17208 7.9275C0.569519 7.13028 0.178825 6.23778 0 5.25C0.178825 4.26222 0.569519 3.36972 1.17208 2.5725C1.77464 1.77528 2.51521 1.15111 3.39379 0.7C4.31124 0.233334 5.28311 0 6.30941 0ZM6.30941 9.33333C7.11801 9.33333 7.88774 9.15444 8.61859 8.79667C9.32611 8.45444 9.92673 7.97222 10.4204 7.35C10.9142 6.72778 11.2504 6.02778 11.4292 5.25C11.2504 4.47222 10.9142 3.77222 10.4204 3.15C9.92673 2.52778 9.32611 2.04556 8.61859 1.70333C7.88774 1.34556 7.11801 1.16667 6.30941 1.16667C5.50081 1.16667 4.73109 1.34556 4.00024 1.70333C3.29271 2.04556 2.69209 2.52778 2.19838 3.15C1.70467 3.77222 1.3684 4.47222 1.18957 5.25C1.3684 6.02778 1.70467 6.72778 2.19838 7.35C2.69209 7.97222 3.29271 8.45444 4.00024 8.79667C4.73109 9.15444 5.50081 9.33333 6.30941 9.33333ZM6.30941 7.875C5.83514 7.875 5.39779 7.75639 4.99738 7.51917C4.59697 7.28194 4.27819 6.96306 4.04106 6.5625C3.80392 6.16194 3.68535 5.72444 3.68535 5.25C3.68535 4.77556 3.80392 4.33806 4.04106 3.9375C4.27819 3.53694 4.59697 3.21806 4.99738 2.98083C5.39779 2.74361 5.83514 2.625 6.30941 2.625C6.78369 2.625 7.22103 2.74361 7.62144 2.98083C8.02186 3.21806 8.34063 3.53694 8.57777 3.9375C8.81491 4.33806 8.93347 4.77556 8.93347 5.25C8.93347 5.72444 8.81491 6.16194 8.57777 6.5625C8.34063 6.96306 8.02186 7.28194 7.62144 7.51917C7.22103 7.75639 6.78369 7.875 6.30941 7.875ZM6.30941 6.70833C6.57376 6.70833 6.81673 6.64222 7.03832 6.51C7.25991 6.37778 7.43679 6.20083 7.56896 5.97917C7.70114 5.7575 7.76722 5.51444 7.76722 5.25C7.76722 4.98556 7.70114 4.7425 7.56896 4.52083C7.43679 4.29917 7.25991 4.12222 7.03832 3.99C6.81673 3.85778 6.57376 3.79167 6.30941 3.79167C6.04506 3.79167 5.80209 3.85778 5.58051 3.99C5.35892 4.12222 5.18204 4.29917 5.04986 4.52083C4.91769 4.7425 4.8516 4.98556 4.8516 5.25C4.8516 5.51444 4.91769 5.7575 5.04986 5.97917C5.18204 6.20083 5.35892 6.37778 5.58051 6.51C5.80209 6.64222 6.04506 6.70833 6.30941 6.70833Z"
+                fill="#2563EB"
+              />
+            </svg>
+            <span>View Changes</span>
+          </a>
+        </div>
+      </div>
+      <!-- Section Tabs -->
+      <nav
+        class="mt-6 flex items-center space-x-8 border-b border-t pt-3 pb-3 text-sm font-medium text-gray-500 select-none px-4"
+      >
+        <a href="#" class="hover:text-gray-900">Overview</a>
+        <a href="#" class="hover:text-gray-900">Withdrawal Plan</a>
+        <a href="#" class="hover:text-gray-900">Enrollments</a>
+        <a href="#" class="hover:text-gray-900">Payments Summary</a>
+        <a href="#" class="hover:text-gray-900">Analytics</a>
+        <a
+          href="#"
+          class="text-white bg-blue-600 px-3 py-3 rounded-md shadow font-medium cursor-default"
+          >Versions</a
+        >
+      </nav>
+      <!-- Version History Card (below tabs, as in your image) -->
+      <div class="mt-6 px-4">
+        <div
+          class="flex items-center justify-between bg-blue-50 rounded-xl px-6 py-4 mb-2"
+        >
+          <div>
+            <div class="flex items-center gap-2">
+              <svg
+                width="32"
+                height="33"
+                viewBox="0 0 32 33"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 16.2031C0 7.36657 7.16344 0.203125 16 0.203125C24.8366 0.203125 32 7.36657 32 16.2031C32 25.0397 24.8366 32.2031 16 32.2031C7.16344 32.2031 0 25.0397 0 16.2031Z"
+                  fill="#DBEAFE"
+                />
+                <path
+                  d="M15.9921 9.53678C16.8982 9.53678 17.7643 9.71012 18.5905 10.0568C19.3811 10.3946 20.0851 10.8723 20.7025 11.4901C21.3199 12.1079 21.7973 12.8123 22.1349 13.6035C22.4814 14.4301 22.6546 15.2968 22.6546 16.2035C22.6546 17.1101 22.4814 17.9768 22.1349 18.8035C21.7973 19.5946 21.3199 20.299 20.7025 20.9168C20.0851 21.5346 19.3811 22.0123 18.5905 22.3501C17.7643 22.6968 16.8982 22.8701 15.9921 22.8701C15.086 22.8701 14.2199 22.6968 13.3937 22.3501C12.6031 22.0123 11.8991 21.5346 11.2817 20.9168C10.6643 20.299 10.1868 19.5946 9.84926 18.8035C9.50281 17.9768 9.32959 17.1101 9.32959 16.2035H10.6621C10.6621 17.1723 10.9064 18.0701 11.395 18.8968C11.8658 19.6968 12.5009 20.3323 13.3004 20.8035C14.1266 21.2923 15.0238 21.5368 15.9921 21.5368C16.9604 21.5368 17.8576 21.2923 18.6837 20.8035C19.4832 20.3323 20.1184 19.6968 20.5892 18.8968C21.0778 18.0701 21.3221 17.1723 21.3221 16.2035C21.3221 15.2346 21.0778 14.3368 20.5892 13.5101C20.1184 12.7101 19.4832 12.0746 18.6837 11.6035C17.8576 11.1146 16.9604 10.8701 15.9921 10.8701C15.0949 10.8701 14.251 11.0835 13.4603 11.5101C12.6964 11.919 12.0701 12.4835 11.5815 13.2035H13.3271V14.5368H9.32959V10.5368H10.6621V12.2035C11.2839 11.3768 12.0523 10.7279 12.9673 10.2568C13.9089 9.77678 14.9172 9.53678 15.9921 9.53678ZM16.6583 12.8701V15.9235L18.817 18.0835L17.8709 19.0301L15.3258 16.4835V12.8701H16.6583Z"
+                  fill="#2563EB"
+                />
+              </svg>
+
+              <span class="font-semibold text-blue-800 text-base"
+                >Version History</span
+              >
+            </div>
+            <div class="text-sm text-blue-700 mt-1">
+              Track all modifications made to this kameti across versions
+            </div>
+          </div>
+          <button
+            class="bg-blue-600 hover:bg-blue-700 text-white rounded-md px-5 py-2 font-semibold text-sm shadow"
+          >
+            + Create New Version
+          </button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-gray-700">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="py-3 px-4 font-normal text-gray-700 text-left">
+                  Version
+                </th>
+                <th class="py-3 px-4 font-normal text-gray-700 text-left">
+                  Changed On
+                </th>
+                <th class="py-3 px-4 font-normal text-gray-700 text-left">
+                  Summary of Changes
+                </th>
+                <th class="py-3 px-4 font-normal text-gray-700 text-left">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="px-4 py-3">v3</td>
+                <td class="px-4 py-3">March 15, 2024</td>
+                <td class="px-4 py-3">
+                  Duration: 5→6 months, Installment: ₹2,000→₹2,500
+                </td>
+                <td class="px-4 py-3 flex items-center gap-2">
+                  <a href="#" class="text-blue-600 hover:underline text-sm mr-2"
+                    >View Diff</a
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 text-xs font-medium border border-blue-200"
+                    >v2 → v3</span
+                  >
+                </td>
+              </tr>
+              <tr class="border-b">
+                <td class="px-4 py-3">v2</td>
+                <td class="px-4 py-3">March 12, 2023</td>
+                <td class="px-4 py-3">Budget adjustment: ₹12,000→₹15,000</td>
+                <td class="px-4 py-3 flex items-center gap-2">
+                  <a href="#" class="text-blue-600 hover:underline text-sm mr-2"
+                    >View Diff</a
+                  >
+                  <span
+                    class="px-2 py-0.5 rounded-full bg-green-50 text-green-700 text-xs font-medium border border-green-200"
+                    >v1 → v2</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3">v1</td>
+                <td class="px-4 py-3">March 12, 2022</td>
+                <td class="px-4 py-3">Budget adjustment: ₹10,000→₹12,000</td>
+                <td class="px-4 py-3">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

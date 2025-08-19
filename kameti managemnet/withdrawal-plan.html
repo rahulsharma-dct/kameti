@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>March 2024 Kameti - Withdrawal Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-whit-100 min-h-screen font-sans">
+    <div class="max-w-5xl mx-auto pt-5 pb-12 mt-4 border rounded-xl shadow-xl">
+      <!-- Header -->
+      <div class="flex items-center justify-between mb-2 px-4">
+        <h1 class="text-gray-900 text-[18px] font-semibold">
+          March 2024 Kameti
+        </h1>
+        <button
+          class="text-gray-400 hover:text-gray-700 text-2xl font-bold leading-none"
+        >
+          &times;
+        </button>
+      </div>
+
+      <!-- Versions Tabs -->
+      <div
+        class="flex justify-between items-center space-x-2 mt-3 text-sm font-medium px-4"
+      >
+        <div class="flex gap-2 bg-gray-100 p-1 rounded-md">
+          <button class="rounded bg-white px-3 py-1 text-blue-700">v3</button>
+          <button
+            class="rounded bg-gray-100 px-3 py-1 text-gray-600 hover:text-gray-800"
+          >
+            v2
+          </button>
+          <button
+            class="rounded bg-gray-100 px-3 py-1 text-gray-600 hover:text-gray-800"
+          >
+            v1
+          </button>
+        </div>
+
+        <div class="ml-auto flex items-center space-x-3">
+          <span
+            class="text-xs rounded-full bg-blue-100 text-blue-700 px-2.5 py-1"
+            >v3 Latest</span
+          >
+          <a
+            href="#"
+            class="flex items-center space-x-1 text-blue-600 text-xs hover:underline"
+          >
+            <svg
+              width="13"
+              height="11"
+              viewBox="0 0 13 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.30941 0C7.33571 0 8.30759 0.233334 9.22504 0.7C10.1036 1.15111 10.8442 1.77528 11.4467 2.5725C12.0493 3.36972 12.44 4.26222 12.6188 5.25C12.44 6.23778 12.0493 7.13028 11.4467 7.9275C10.8442 8.72472 10.1036 9.34889 9.22504 9.8C8.30759 10.2667 7.33571 10.5 6.30941 10.5C5.28311 10.5 4.31124 10.2667 3.39379 9.8C2.51521 9.34889 1.77464 8.72472 1.17208 7.9275C0.569519 7.13028 0.178825 6.23778 0 5.25C0.178825 4.26222 0.569519 3.36972 1.17208 2.5725C1.77464 1.77528 2.51521 1.15111 3.39379 0.7C4.31124 0.233334 5.28311 0 6.30941 0ZM6.30941 9.33333C7.11801 9.33333 7.88774 9.15444 8.61859 8.79667C9.32611 8.45444 9.92673 7.97222 10.4204 7.35C10.9142 6.72778 11.2504 6.02778 11.4292 5.25C11.2504 4.47222 10.9142 3.77222 10.4204 3.15C9.92673 2.52778 9.32611 2.04556 8.61859 1.70333C7.88774 1.34556 7.11801 1.16667 6.30941 1.16667C5.50081 1.16667 4.73109 1.34556 4.00024 1.70333C3.29271 2.04556 2.69209 2.52778 2.19838 3.15C1.70467 3.77222 1.3684 4.47222 1.18957 5.25C1.3684 6.02778 1.70467 6.72778 2.19838 7.35C2.69209 7.97222 3.29271 8.45444 4.00024 8.79667C4.73109 9.15444 5.50081 9.33333 6.30941 9.33333ZM6.30941 7.875C5.83514 7.875 5.39779 7.75639 4.99738 7.51917C4.59697 7.28194 4.27819 6.96306 4.04106 6.5625C3.80392 6.16194 3.68535 5.72444 3.68535 5.25C3.68535 4.77556 3.80392 4.33806 4.04106 3.9375C4.27819 3.53694 4.59697 3.21806 4.99738 2.98083C5.39779 2.74361 5.83514 2.625 6.30941 2.625C6.78369 2.625 7.22103 2.74361 7.62144 2.98083C8.02186 3.21806 8.34063 3.53694 8.57777 3.9375C8.81491 4.33806 8.93347 4.77556 8.93347 5.25C8.93347 5.72444 8.81491 6.16194 8.57777 6.5625C8.34063 6.96306 8.02186 7.28194 7.62144 7.51917C7.22103 7.75639 6.78369 7.875 6.30941 7.875ZM6.30941 6.70833C6.57376 6.70833 6.81673 6.64222 7.03832 6.51C7.25991 6.37778 7.43679 6.20083 7.56896 5.97917C7.70114 5.7575 7.76722 5.51444 7.76722 5.25C7.76722 4.98556 7.70114 4.7425 7.56896 4.52083C7.43679 4.29917 7.25991 4.12222 7.03832 3.99C6.81673 3.85778 6.57376 3.79167 6.30941 3.79167C6.04506 3.79167 5.80209 3.85778 5.58051 3.99C5.35892 4.12222 5.18204 4.29917 5.04986 4.52083C4.91769 4.7425 4.8516 4.98556 4.8516 5.25C4.8516 5.51444 4.91769 5.7575 5.04986 5.97917C5.18204 6.20083 5.35892 6.37778 5.58051 6.51C5.80209 6.64222 6.04506 6.70833 6.30941 6.70833Z"
+                fill="#2563EB"
+              />
+            </svg>
+
+            <span>View Changes</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Section Tabs -->
+      <nav
+        class="mt-6 flex items-center space-x-8 border-b border-t pt-3 pb-3 text-sm font-medium text-gray-500 select-none px-4"
+      >
+        <a href="#" class="hover:text-gray-900">Overview</a>
+        <a
+          href="#"
+          class="text-white bg-blue-600 px-3 py-3 rounded-md shadow font-medium cursor-default"
+          >Withdrawal Plan</a
+        >
+        <a href="#" class="hover:text-gray-900">Enrollments</a>
+        <a href="#" class="hover:text-gray-900">Payments Summary</a>
+        <a href="#" class="hover:text-gray-900">Analytics</a>
+        <a href="#" class="hover:text-gray-900">Versions</a>
+      </nav>
+
+      <!-- Info Box -->
+      <div
+        class="mt-6 rounded-lg bg-blue-50 px-4 py-3 mx-4 border border-blue-100 flex flex-col items-start max-w-[calc(100%-0rem)] text-blue-900 text-sm leading-tight"
+      >
+        <div class="flex items-center gap-2 mb-1">
+          <svg
+            class="mt-0.5 flex-shrink-0"
+            width="28"
+            height="28"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16Z"
+              fill="#DBEAFE"
+            />
+            <path
+              d="M15.6625 22.333C14.7564 22.333 13.8903 22.1597 13.0641 21.813C12.2735 21.4752 11.5695 20.9975 10.9521 20.3797C10.3347 19.7619 9.85724 19.0575 9.51968 18.2663C9.17323 17.4397 9 16.573 9 15.6663C9 14.7597 9.17323 13.893 9.51968 13.0663C9.85724 12.2752 10.3347 11.5708 10.9521 10.953C11.5695 10.3352 12.2735 9.85745 13.0641 9.51968C13.8903 9.17301 14.7564 8.99967 15.6625 8.99967C16.5686 8.99967 17.4347 9.17301 18.2609 9.51968C19.0515 9.85745 19.7555 10.3352 20.3729 10.953C20.9903 11.5708 21.4678 12.2752 21.8053 13.0663C22.1518 13.893 22.325 14.7597 22.325 15.6663C22.325 16.573 22.1518 17.4397 21.8053 18.2663C21.4678 19.0575 20.9903 19.7619 20.3729 20.3797C19.7555 20.9975 19.0515 21.4752 18.2609 21.813C17.4347 22.1597 16.5686 22.333 15.6625 22.333ZM15.6625 20.9997C16.6308 20.9997 17.528 20.7552 18.3541 20.2663C19.1537 19.7952 19.7888 19.1597 20.2596 18.3597C20.7482 17.533 20.9925 16.6352 20.9925 15.6663C20.9925 14.6975 20.7482 13.7997 20.2596 12.973C19.7888 12.173 19.1537 11.5375 18.3541 11.0663C17.528 10.5775 16.6308 10.333 15.6625 10.333C14.6942 10.333 13.797 10.5775 12.9708 11.0663C12.1714 11.5375 11.5362 12.173 11.0654 12.973C10.5768 13.7997 10.3325 14.6975 10.3325 15.6663C10.3325 16.6352 10.5768 17.533 11.0654 18.3597C11.5362 19.1597 12.1714 19.7952 12.9708 20.2663C13.797 20.7552 14.6942 20.9997 15.6625 20.9997ZM14.9963 12.333H16.3288V13.6663H14.9963V12.333ZM14.9963 14.9997H16.3288V18.9997H14.9963V14.9997Z"
+              fill="#2563EB"
+            />
+          </svg>
+
+          <div>
+            <p class="font-semibold">Withdrawal Schedule</p>
+          </div>
+        </div>
+        <p class="text-xs font-normal text-blue-700">
+          Members can withdraw at any month with different amounts based on
+          timing
+        </p>
+      </div>
+
+      <!-- Table -->
+      <div class="overflow-x-auto mt-4 mx-4">
+        <table class="w-full text-left text-gray-700 text-sm">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="py-3 px-6 font-normal text-gray-600">Date</th>
+              <th class="py-3 px-6 font-normal text-gray-600">Month</th>
+              <th class="py-3 px-6 font-normal text-gray-600">
+                Withdrawal Amount
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-3 px-6 font-semibold">10</td>
+              <td class="py-3 px-6">Month 1</td>
+              <td class="py-3 px-6">₹12,000</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-6 font-semibold">10</td>
+              <td class="py-3 px-6">Month 2</td>
+              <td class="py-3 px-6">₹12,500</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-6 font-semibold">10</td>
+              <td class="py-3 px-6">Month 3</td>
+              <td class="py-3 px-6">₹13,000</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-6 font-semibold">10</td>
+              <td class="py-3 px-6">Month 4</td>
+              <td class="py-3 px-6">₹13,500</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-6 font-semibold">10</td>
+              <td class="py-3 px-6">Month 5</td>
+              <td class="py-3 px-6">₹14,000</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-6 font-semibold">10</td>
+              <td class="py-3 px-6">Month 6</td>
+              <td class="py-3 px-6">₹15,000</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-6 font-semibold">10</td>
+              <td class="py-3 px-6">Month 7</td>
+              <td class="py-3 px-6">₹16,000</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-6 font-semibold">10</td>
+              <td class="py-3 px-6">Month 8</td>
+              <td class="py-3 px-6">₹17,000</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-6 font-semibold">10</td>
+              <td class="py-3 px-6">Month 9</td>
+              <td class="py-3 px-6">₹19,000</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-6 font-semibold">10</td>
+              <td class="py-3 px-6">Month 10</td>
+              <td class="py-3 px-6">₹21,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

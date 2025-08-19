@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create New Kameti - Progress Stepper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .stepper-bar {
+        flex: 1;
+        height: 2.5px;
+        margin: 0 6px;
+        border-radius: 2px;
+        background-color: #e5e7eb;
+        position: relative;
+        top: 0;
+        overflow: hidden;
+      }
+      .stepper-bar-active {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        background: #10b981;
+        border-radius: 2px;
+        height: 4px;
+      }
+
+      .stepper-bar-active-1 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background: #10b981;
+        border-radius: 2px;
+        height: 4px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-100 min-h-screen flex items-center justify-center font-sans"
+  >
+    <div class="max-w-[49rem] w-full bg-white rounded-2xl shadow-lg">
+      <!-- Page Title Row -->
+      <div class="flex items-center justify-between mb-5 py-6 px-6 border-b">
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-xl font-semibold text-gray-900"
+            >Create New Kameti</span
+          >
+          <span class="text-gray-500 text-sm">Step 4 of 4</span>
+        </div>
+        <button
+          class="text-gray-400 hover:text-gray-700 text-xl font-bold leading-none"
+        >
+          &times;
+        </button>
+      </div>
+      <!-- PROGRESS SECTION: your exact code -->
+      <div class="w-full px-5 pb-4 border-b">
+        <div class="flex items-center">
+          <!-- Step 1: Active -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-green-500 text-white font-semibold text-base"
+            >
+              <svg
+                width="10"
+                height="9"
+                viewBox="0 0 10 9"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.75604 6.35505L9.12079 0.988385L9.93716 1.81672L3.75604 8.01172L0.0473633 4.29005L0.863738 3.47339L3.75604 6.35505Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </div>
+          <!-- Bar (active) -->
+          <div class="stepper-bar relative">
+            <div class="stepper-bar-active-1"></div>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-green-500 text-white font-semibold text-base"
+            >
+              <svg
+                width="10"
+                height="9"
+                viewBox="0 0 10 9"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.75604 6.35505L9.12079 0.988385L9.93716 1.81672L3.75604 8.01172L0.0473633 4.29005L0.863738 3.47339L3.75604 6.35505Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </div>
+          <!-- Bar -->
+          <!-- Bar (active) -->
+          <div class="stepper-bar relative">
+            <div class="stepper-bar-active-1"></div>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-green-500 text-white font-semibold text-base"
+            >
+              <svg
+                width="10"
+                height="9"
+                viewBox="0 0 10 9"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.75604 6.35505L9.12079 0.988385L9.93716 1.81672L3.75604 8.01172L0.0473633 4.29005L0.863738 3.47339L3.75604 6.35505Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="stepper-bar relative">
+            <div class="stepper-bar-active-1"></div>
+          </div>
+          <!-- Step 4 -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-green-500 text-white font-semibold text-base"
+            >
+              <svg
+                width="10"
+                height="9"
+                viewBox="0 0 10 9"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.75604 6.35505L9.12079 0.988385L9.93716 1.81672L3.75604 8.01172L0.0473633 4.29005L0.863738 3.47339L3.75604 6.35505Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- LABELS ROW (as in your image) -->
+        <div class="flex justify-between mt-2">
+          <div class="text-base font-medium text-green-600">Basic Details</div>
+          <div class="text-base font-medium text-green-600">
+            Withdrawal Details
+          </div>
+          <div class="text-base font-medium text-green-600 mr-3">
+            Kameti Title
+          </div>
+          <div class="text-base font-medium text-green-600">Review</div>
+        </div>
+      </div>
+      <div class="mt-7 mx-6 mb-6">
+        <!-- Important Note -->
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+          <div class="flex items-start space-x-3">
+            <svg
+              class="w-6 h-6 text-yellow-400 flex-shrink-0"
+              width="15"
+              height="14"
+              viewBox="0 0 15 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.90935 1.27246L14.2713 12.2725C14.3603 12.4236 14.3803 12.588 14.3314 12.7658C14.2825 12.9436 14.178 13.0813 14.0179 13.1791C13.9201 13.2413 13.809 13.2725 13.6845 13.2725H0.987188C0.800463 13.2725 0.642635 13.2058 0.513706 13.0725C0.384777 12.9391 0.320312 12.7836 0.320312 12.6058C0.320312 12.4813 0.346988 12.3702 0.400338 12.2725L6.76233 1.27246C6.85124 1.11246 6.98462 1.00802 7.16245 0.959128C7.34028 0.910239 7.50923 0.93024 7.66928 1.01913C7.77598 1.08135 7.856 1.16579 7.90935 1.27246ZM2.13421 11.9391H12.5375L7.33584 2.93913L2.13421 11.9391ZM6.66896 9.93913H8.00271V11.2725H6.66896V9.93913ZM6.66896 5.27246H8.00271V8.60579H6.66896V5.27246Z"
+                fill="#FACC15"
+              />
+            </svg>
+
+            <div class="text-yellow-700 text-sm">
+              <div class="font-semibold mb-1">Important Note:</div>
+              Once saved and users are enrolled, these details cannot be
+              modified.<br />
+              Only new versions can be created if needed.
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Section -->
+        <h2 class="text-xl font-semibold text-gray-900 mb-5">
+          Review Kameti Details
+        </h2>
+
+        <!-- Basic Details Grid -->
+        <div class="w-full flex flex-wrap gap-y-3 bg-gray-50 rounded-xl">
+          <div class="flex-1 px-4 py-4 mr-4">
+            <div class="text-gray-500 text-sm font-medium">Total Budget</div>
+            <div class="text-base text-gray-900 font-semibold">$10000</div>
+          </div>
+          <div class="flex-1 px-4 py-4 mr-4">
+            <div class="text-gray-500 text-sm font-medium">Duration</div>
+            <div class="text-base text-gray-900 font-semibold">5 months</div>
+          </div>
+          <div class="flex-1 px-4 py-4">
+            <div class="text-gray-500 text-sm font-medium">
+              Monthly Installment
+            </div>
+            <div class="text-base text-gray-900 font-semibold">$2000.00</div>
+          </div>
+        </div>
+        <!-- Kameti Title -->
+        <div class="rounded-xl bg-gray-50 px-4 py-4 mt-5 mb-5">
+          <div class="text-gray-500 text-sm font-medium">Kameti Title</div>
+          <div class="text-base text-gray-900 font-semibold">
+            5 month kameti
+          </div>
+        </div>
+
+        <!-- Withdrawal Schedule -->
+        <div class="bg-gray-50 rounded-xl p-6">
+          <div class="text-gray-900 font-semibold mb-3">
+            Withdrawal Schedule
+          </div>
+          <div class="w-full overflow-x-auto rounded-lg border">
+            <table
+              class="min-w-full divide-y divide-gray-200 rounded-lg overflow-hidden border border-gray-200"
+            >
+              <thead>
+                <tr class="bg-gray-50">
+                  <th
+                    class="px-6 py-3 text-left text-sm font-medium text-gray-500 border-b border-gray-200 rounded-tl-lg"
+                  >
+                    Month
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-sm font-medium text-gray-500 border-b border-gray-200 rounded-tr-lg"
+                  >
+                    Withdrawal Amount
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-3 text-gray-900">Month 1</td>
+                  <td class="px-6 py-3 text-gray-900">$70000</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-3 text-gray-900">Month 2</td>
+                  <td class="px-6 py-3 text-gray-900">$75000</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-3 text-gray-900">Month 3</td>
+                  <td class="px-6 py-3 text-gray-900">$80000</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-3 text-gray-900">Month 4</td>
+                  <td class="px-6 py-3 text-gray-900">$85000</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-3 text-gray-900">Month 5</td>
+                  <td class="px-6 py-3 text-gray-900">$90000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Button Row -->
+        <div class="flex justify-between gap-4 pb-1 mt-8">
+          <button
+            type="button"
+            class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-xl px-7 py-2"
+          >
+            &larr; Previous
+          </button>
+          <div class="flex gap-3">
+            <button
+              type="button"
+              class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-xl px-7 py-2"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl px-7 py-2"
+            >
+              Create Kameti
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
