@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Withdrawal Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 min-h-screen flex flex-col items-center py-10">
+    <div
+      class="max-w-4xl w-full bg-white rounded-2xl shadow border border-gray-200 overflow-hidden"
+    >
+      <!-- Top Bar -->
+      <div
+        class="flex items-center justify-between px-8 pt-7 pb-7 bg-white border-b"
+      >
+        <div>
+          <div class="flex items-center space-x-4">
+            <span class="text-[32px] font-bold text-gray-900 leading-tight"
+              >₹15,000</span
+            >
+            <span
+              class="inline-flex px-3 py-1 items-center gap-2 text-sm font-medium rounded-full bg-amber-100 text-amber-600"
+            >
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 13 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.50801 12.332C5.71496 12.332 4.9569 12.1804 4.23382 11.877C3.54185 11.5815 2.92568 11.1634 2.38531 10.6229C1.84495 10.0823 1.42705 9.46592 1.1316 8.7737C0.82837 8.05036 0.676758 7.29203 0.676758 6.4987C0.676758 5.70536 0.82837 4.94703 1.1316 4.2237C1.42705 3.53148 1.84495 2.91509 2.38531 2.37453C2.92568 1.83398 3.54185 1.41592 4.23382 1.12036C4.9569 0.817031 5.71496 0.665364 6.50801 0.665364C7.30106 0.665364 8.05912 0.817031 8.7822 1.12036C9.47417 1.41592 10.0903 1.83398 10.6307 2.37453C11.1711 2.91509 11.589 3.53148 11.8844 4.2237C12.1876 4.94703 12.3393 5.70536 12.3393 6.4987C12.3393 7.29203 12.1876 8.05036 11.8844 8.7737C11.589 9.46592 11.1711 10.0823 10.6307 10.6229C10.0903 11.1634 9.47417 11.5815 8.7822 11.877C8.05912 12.1804 7.30106 12.332 6.50801 12.332ZM6.50801 11.1654C7.35548 11.1654 8.14076 10.9515 8.86383 10.5237C9.56358 10.1115 10.1195 9.55536 10.5316 8.85536C10.9592 8.13203 11.173 7.34648 11.173 6.4987C11.173 5.65092 10.9592 4.86536 10.5316 4.14203C10.1195 3.44203 9.56358 2.88592 8.86383 2.4737C8.14076 2.04592 7.35548 1.83203 6.50801 1.83203C5.66053 1.83203 4.87526 2.04592 4.15218 2.4737C3.45243 2.88592 2.89652 3.44203 2.48445 4.14203C2.05682 4.86536 1.84301 5.65092 1.84301 6.4987C1.84301 7.34648 2.05682 8.13203 2.48445 8.85536C2.89652 9.55536 3.45243 10.1115 4.15218 10.5237C4.87526 10.9515 5.66053 11.1654 6.50801 11.1654ZM7.09113 6.4987H9.42363V7.66536H5.92488V3.58203H7.09113V6.4987Z"
+                  fill="#D97706"
+                />
+              </svg>
+
+              Pending
+            </span>
+          </div>
+          <div class="mt-2 flex space-x-5 text-gray-500 text-sm">
+            <span>Withdrawal Month: 7</span>
+            <span>Mode: Bank</span>
+          </div>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button
+            class="px-4 py-2 bg-green-50 text-green-600 text-sm font-medium rounded-lg border border-green-100 hover:bg-green-100 flex items-center gap-2"
+          >
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 12 9"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.75253 6.61839L10.6405 0.485052L11.5365 1.43172L4.75253 8.51172L0.682129 4.25839L1.57813 3.32505L4.75253 6.61839Z"
+                fill="#16A34A"
+              />
+            </svg>
+
+            Approve
+          </button>
+          <button
+            class="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 flex items-center gap-2"
+          >
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 12 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.31966 10.1523L8.80926 3.39234L7.90046 2.44568L1.41086 9.21901V10.1523H2.31966ZM2.84446 11.4857H0.130859V8.65901L7.45246 1.03234C7.57193 0.9079 7.72126 0.845677 7.90046 0.845677C8.07966 0.845677 8.22899 0.9079 8.34846 1.03234L10.1661 2.92568C10.2941 3.05012 10.3581 3.20568 10.3581 3.39234C10.3581 3.57901 10.2941 3.73901 10.1661 3.87234L2.84446 11.4857ZM0.130859 12.819H11.6509V14.1523H0.130859V12.819Z"
+                fill="#4B5563"
+              />
+            </svg>
+
+            Edit
+          </button>
+          <button
+            class="px-4 py-2 bg-red-100 text-red-600 text-sm font-medium rounded-lg hover:bg-red-200 flex items-center gap-2"
+          >
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 14 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.1688 3.5013H13.3688V4.83464H12.0888V13.5013C12.0888 13.688 12.027 13.8457 11.9032 13.9746C11.7795 14.1035 11.628 14.168 11.4488 14.168H2.48885C2.30965 14.168 2.15818 14.1035 2.03445 13.9746C1.91071 13.8457 1.84885 13.688 1.84885 13.5013V4.83464H0.568848V3.5013H3.76885V1.5013C3.76885 1.31464 3.83071 1.15686 3.95445 1.02797C4.07818 0.89908 4.22965 0.834636 4.40885 0.834636H9.52885C9.70805 0.834636 9.85952 0.89908 9.98325 1.02797C10.107 1.15686 10.1688 1.31464 10.1688 1.5013V3.5013ZM10.8088 4.83464H3.12885V12.8346H10.8088V4.83464ZM5.04885 6.83464H6.32885V10.8346H5.04885V6.83464ZM7.60885 6.83464H8.88885V10.8346H7.60885V6.83464ZM5.04885 2.16797V3.5013H8.88885V2.16797H5.04885Z"
+                fill="#DC2626"
+              />
+            </svg>
+
+            Delete
+          </button>
+          <button
+            class="ml-3 rounded text-2xl text-gray-400 hover:text-gray-600 transition"
+          >
+            &times;
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Card -->
+      <div class="px-8 py-6">
+        <div class="rounded-2xl border border-gray-200 bg-white mb-7">
+          <div class="px-8 py-6">
+            <div class="font-bold text-gray-800 text-[17px] mb-1">Overview</div>
+            <div class="text-[13px] text-gray-400 mb-7">
+              Gives a quick snapshot of everything important.
+            </div>
+            <table class="w-full mb-2">
+              <tbody>
+                <tr class="border-b border-gray-100">
+                  <td
+                    class="py-2 text-gray-500 min-w-[140px] text-[15px] font-bold"
+                  >
+                    User
+                  </td>
+                  <td class="py-2 text-right">
+                    <a
+                      href="#"
+                      class="text-blue-600 text-[15px] font-normal hover:underline"
+                      >Priya Sharma</a
+                    >
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2 text-gray-500 text-[15px] font-bold">
+                    Kameti
+                  </td>
+                  <td class="py-2 text-right">
+                    <a
+                      href="#"
+                      class="text-blue-600 text-[15px] hover:underline"
+                      >Festival Savings v2</a
+                    >
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2 text-gray-500 text-[15px] font-bold">
+                    Enrollment
+                  </td>
+                  <td class="py-2 text-right">
+                    <a
+                      href="#"
+                      class="text-blue-600 text-[15px] hover:underline"
+                      >Membership Ref</a
+                    >
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2 text-gray-500 text-[15px] font-bold">
+                    Status
+                  </td>
+                  <td class="py-2 text-right">
+                    <span
+                      class="inline-flex px-3 py-1 items-center text-xs font-medium rounded-full bg-amber-100 text-amber-600 gap-2"
+                    >
+                      <svg
+                        width="12"
+                        height="13"
+                        viewBox="0 0 12 13"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.92988 12.332C5.13683 12.332 4.37877 12.1804 3.6557 11.877C2.96372 11.5815 2.34755 11.1634 1.80719 10.6229C1.26683 10.0823 0.84892 9.46592 0.55347 8.7737C0.250245 8.05036 0.0986328 7.29203 0.0986328 6.4987C0.0986328 5.70536 0.250245 4.94703 0.55347 4.2237C0.84892 3.53148 1.26683 2.91509 1.80719 2.37453C2.34755 1.83398 2.96372 1.41592 3.6557 1.12036C4.37877 0.817031 5.13683 0.665364 5.92988 0.665364C6.72293 0.665364 7.481 0.817031 8.20407 1.12036C8.89605 1.41592 9.51221 1.83398 10.0526 2.37453C10.5929 2.91509 11.0108 3.53148 11.3063 4.2237C11.6095 4.94703 11.7611 5.70536 11.7611 6.4987C11.7611 7.29203 11.6095 8.05036 11.3063 8.7737C11.0108 9.46592 10.5929 10.0823 10.0526 10.6229C9.51221 11.1634 8.89605 11.5815 8.20407 11.877C7.481 12.1804 6.72293 12.332 5.92988 12.332ZM5.92988 11.1654C6.77736 11.1654 7.56263 10.9515 8.28571 10.5237C8.98546 10.1115 9.54137 9.55536 9.95345 8.85536C10.3811 8.13203 10.5949 7.34648 10.5949 6.4987C10.5949 5.65092 10.3811 4.86536 9.95345 4.14203C9.54137 3.44203 8.98546 2.88592 8.28571 2.4737C7.56263 2.04592 6.77736 1.83203 5.92988 1.83203C5.08241 1.83203 4.29713 2.04592 3.57406 2.4737C2.87431 2.88592 2.3184 3.44203 1.90632 4.14203C1.4787 4.86536 1.26488 5.65092 1.26488 6.4987C1.26488 7.34648 1.4787 8.13203 1.90632 8.85536C2.3184 9.55536 2.87431 10.1115 3.57406 10.5237C4.29713 10.9515 5.08241 11.1654 5.92988 11.1654ZM6.51301 6.4987H8.84551V7.66536H5.34676V3.58203H6.51301V6.4987Z"
+                          fill="#D97706"
+                        />
+                      </svg>
+
+                      Pending
+                    </span>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2 text-gray-500 text-[15px] font-bold">
+                    Paid On
+                  </td>
+                  <td class="py-2 text-right text-gray-600 text-[15px]">
+                    26 July 2025
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2 text-gray-500 text-[15px] font-bold">
+                    Withdrawal Mode
+                  </td>
+                  <td class="py-2 text-right text-gray-600 text-[15px]">
+                    Bank
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2 text-gray-500 text-[15px] font-bold">
+                    Amount
+                  </td>
+                  <td class="py-2 text-right font-bold text-[15px]">₹15,000</td>
+                </tr>
+                <tr>
+                  <td class="py-2 text-gray-500 text-[15px] font-bold">
+                    Withdrawal Month
+                  </td>
+                  <td class="py-2 text-right text-gray-600 text-[15px]">7</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Amount Distribution Section -->
+        <div class="rounded-2xl border border-gray-200 bg-white">
+          <div class="px-8 py-6">
+            <div class="font-bold text-gray-800 text-[17px] mb-1">
+              Amount Distribution
+            </div>
+            <div class="text-[13px] text-gray-400 mb-7">
+              Current distribution of withdrawal amount between users.
+            </div>
+            <div class="flex flex-col md:flex-row gap-5 mb-5">
+              <div class="bg-gray-50 rounded-lg px-6 py-5 flex-1">
+                <div class="font-semibold text-gray-600 mb-1 text-[15px]">
+                  User 1: Priya Sharma
+                </div>
+                <div class="font-bold text-xl text-gray-800">₹7,500</div>
+              </div>
+              <div class="bg-gray-50 rounded-lg px-6 py-5 flex-1">
+                <div class="font-semibold text-gray-600 mb-1 text-[15px]">
+                  User 2: Rajesh Patel
+                </div>
+                <div class="font-bold text-xl text-gray-800">₹7,500</div>
+              </div>
+            </div>
+            <div
+              class="flex items-center justify-between bg-gray-50 py-4 px-4 rounded-lg mt-2"
+            >
+              <span class="font-semibold text-gray-700 text-lg mr-2"
+                >Total Amount:</span
+              >
+              <span class="font-bold text-xl text-gray-900">₹15,000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

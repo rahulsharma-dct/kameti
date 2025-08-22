@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create New Kameti - Progress Stepper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .stepper-bar {
+        flex: 1;
+        height: 2.5px;
+        margin: 0 6px;
+        border-radius: 2px;
+        background-color: #e5e7eb;
+        position: relative;
+        top: 0;
+        overflow: hidden;
+      }
+      .stepper-bar-active {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 45%;
+        background: #10b981;
+        border-radius: 2px;
+        height: 4px;
+      }
+      .stepper-bar-active-1 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background: #10b981;
+        border-radius: 2px;
+        height: 4px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-100 min-h-screen flex items-center justify-center font-sans"
+  >
+    <div class="max-w-[49rem] w-full bg-white rounded-2xl shadow-lg">
+      <!-- Page Title Row -->
+      <div class="flex items-center justify-between mb-5 py-6 px-6 border-b">
+        <div class="flex items-center justify-center gap-3">
+          <span class="text-xl font-semibold text-gray-900"
+            >Create New Kameti</span
+          >
+          <span class="text-gray-500 text-sm">Step 3 of 3</span>
+        </div>
+        <button
+          class="text-gray-400 hover:text-gray-700 text-xl font-bold leading-none"
+        >
+          &times;
+        </button>
+      </div>
+      <!-- PROGRESS SECTION: your exact code -->
+      <div class="w-full px-5 pb-4 border-b">
+        <div class="flex items-center">
+          <!-- Step 1: Active -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-green-500 text-white font-semibold text-base"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 10 9"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.75604 6.35505L9.12079 0.988385L9.93716 1.81672L3.75604 8.01172L0.0473633 4.29005L0.863738 3.47339L3.75604 6.35505Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </div>
+          <!-- Bar (active) -->
+          <div class="stepper-bar relative">
+            <div class="stepper-bar-active-1"></div>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-green-500 text-white font-semibold text-base"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 10 9"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.75604 6.35505L9.12079 0.988385L9.93716 1.81672L3.75604 8.01172L0.0473633 4.29005L0.863738 3.47339L3.75604 6.35505Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </div>
+          <!-- Bar -->
+          <div class="stepper-bar">
+            <div class="stepper-bar-active-1"></div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-green-500 text-white font-semibold text-base"
+            >
+              3
+            </div>
+          </div>
+        </div>
+        <!-- LABELS ROW (as in your image) -->
+        <div class="flex justify-between mt-2">
+          <div class="text-base font-medium text-green-600">
+            Select User & Kameti
+          </div>
+          <div class="text-green-600 text-base font-normal">Select Dates</div>
+
+          <div class="text-gray-500 text-base font-normal">Review Details</div>
+        </div>
+      </div>
+      <!-- Form Content (Pixel-Perfect Match with Image) -->
+      <div class="mt-7 mx-6 mb-6">
+        <!-- Form Content START -->
+        <div>
+          <!-- Heading & instructions -->
+          <h3 class="text-lg font-semibold text-gray-900 mb-1">
+            Review & Confirm
+          </h3>
+          <p class="text-gray-600 text-sm mb-6">
+            Please review all the information before submitting the enrollment.
+          </p>
+
+          <!-- Card -->
+          <div class="bg-gray-50 border border-gray-100 rounded-xl p-5 mb-8">
+            <!-- Selected Users -->
+            <div class="mb-5">
+              <div class="text-sm font-semibold text-gray-700 mb-3">
+                Selected Users
+              </div>
+              <div
+                class="rounded-2xl border border-gray-200 flex items-center p-4 bg-white"
+              >
+                <div
+                  class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600 text-base mr-3"
+                >
+                  JS
+                </div>
+                <div>
+                  <div class="text-base font-medium text-gray-900">
+                    John Smith
+                  </div>
+                  <div class="text-xs text-gray-500">+91 12324 94854</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Selected Kameti -->
+            <div class="mb-5">
+              <div class="text-sm font-semibold text-gray-700 mb-3">
+                Selected Kameti
+              </div>
+              <div
+                class="rounded-2xl border border-gray-200 flex items-start justify-between p-4 bg-white"
+              >
+                <div>
+                  <div class="text-base font-medium text-gray-900">
+                    Monthly Savings Circle
+                  </div>
+                  <div class="text-xs text-gray-500 mt-1">
+                    2,100 × 12 months
+                  </div>
+                </div>
+                <div>
+                  <span
+                    class="inline-block px-2 py-1 rounded-full text-mx bg-green-100 text-green-700 font-semibold align-middle"
+                    >v1</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Enrollment Dates -->
+            <div>
+              <div class="text-sm font-semibold text-gray-700 mb-3">
+                Enrollment Dates
+              </div>
+              <div class="flex gap-4">
+                <div
+                  class="flex-1 rounded-2xl border border-gray-200 p-4 bg-white"
+                >
+                  <div class="text-xs text-gray-500 mb-1">Start Date</div>
+                  <div class="text-base text-gray-900 font-medium">-</div>
+                </div>
+                <div
+                  class="flex-1 rounded-2xl border border-gray-200 p-4 bg-white"
+                >
+                  <div class="text-xs text-gray-500 mb-1">
+                    Expected Withdrawal
+                  </div>
+                  <div class="text-base text-gray-900 font-medium">-</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ready to Submit -->
+          <div
+            class="bg-green-50 border border-green-200 text-green-700 rounded-xl px-5 py-3 mb-7 flex items-start gap-2"
+          >
+            <svg
+              class="mt-2"
+              width="12"
+              height="12"
+              viewBox="0 0 12 9"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.57964 6.62034L10.7091 0.487005L11.6419 1.43367L4.57964 8.51367L0.342285 4.26034L1.27504 3.327L4.57964 6.62034Z"
+                fill="#16A34A"
+              />
+            </svg>
+
+            <div>
+              <span class="font-semibold">Ready to Submit</span>
+              <span class="block text-sm"
+                >All required information has been provided. Click submit to
+                create the enrollment.</span
+              >
+            </div>
+          </div>
+
+          <!-- Button Row -->
+          <div class="flex items-center justify-between mt-2">
+            <button
+              type="button"
+              class="px-5 py-2 rounded-lg bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 transition"
+            >
+              &larr; Back
+            </button>
+            <div class="flex gap-3">
+              <button
+                type="button"
+                class="px-5 py-2 rounded-lg bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 transition"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                class="px-6 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
+              >
+                Create Enrollment
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Form Content END -->
+      </div>
+    </div>
+  </body>
+</html>

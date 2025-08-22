@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>make Withdrawal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .stepper-bar {
+        flex: 1;
+        height: 2.5px;
+        margin: 0 6px;
+        border-radius: 2px;
+        background-color: #e5e7eb;
+        position: relative;
+        top: 0;
+        overflow: hidden;
+      }
+      .stepper-bar-active {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 45%;
+        background: #10b981;
+        border-radius: 2px;
+        height: 4px;
+      }
+
+      .stepper-bar-active-1 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background: #10b981;
+        border-radius: 2px;
+        height: 4px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-100 min-h-screen flex items-center justify-center font-sans"
+  >
+    <div class="max-w-[49rem] w-full bg-white rounded-2xl shadow-lg">
+      <!-- Page Title Row -->
+      <div class="flex items-center justify-between mb-5 py-6 px-6 border-b">
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-xl font-semibold text-gray-900"
+            >Make Withdrawal</span
+          >
+          <span class="text-gray-500 text-sm">Step 2 of 3</span>
+        </div>
+        <button
+          class="text-gray-400 hover:text-gray-700 text-xl font-bold leading-none"
+        >
+          &times;
+        </button>
+      </div>
+      <!-- PROGRESS SECTION: your exact code -->
+      <div class="w-full px-5 pb-4 border-b">
+        <div class="flex items-center">
+          <!-- Step 1: Active -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-green-500 text-white font-semibold text-base"
+            >
+              <svg
+                width="10"
+                height="9"
+                viewBox="0 0 10 9"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.75604 6.35505L9.12079 0.988385L9.93716 1.81672L3.75604 8.01172L0.0473633 4.29005L0.863738 3.47339L3.75604 6.35505Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </div>
+          <!-- Bar (active) -->
+          <div class="stepper-bar relative">
+            <div class="stepper-bar-active-1"></div>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-green-500 text-white font-semibold text-base"
+            >
+              2
+            </div>
+          </div>
+          <!-- Bar -->
+          <!-- Bar (active) -->
+          <div class="stepper-bar relative">
+            <div class="stepper-bar-active"></div>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 text-gray-500 font-semibold text-base"
+            >
+              3
+            </div>
+          </div>
+          <!-- Bar -->
+          <div class="stepper-bar"></div>
+          <!-- Step 4 -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 text-gray-500 font-semibold text-base"
+            >
+              4
+            </div>
+          </div>
+        </div>
+        <!-- LABELS ROW (as in your image) -->
+        <div class="flex justify-between mt-2">
+          <div class="text-base font-medium text-green-600">Select Details</div>
+          <div class="text-base font-medium text-green-600">Payment Mode</div>
+          <div class="text-gray-500 text-base font-normal mr-2">
+            Distribution
+          </div>
+          <div class="text-gray-500 text-base font-normal">Review</div>
+        </div>
+      </div>
+      <div class="mt-7 mx-6 mb-6">
+        <!-- Payment Details Title + Subtitle -->
+        <div class="mb-5">
+          <div class="font-semibold text-gray-900 text-[18px]">
+            Payment Details
+          </div>
+          <div class="text-gray-500 text-[15px] mt-1">
+            Select payment mode and withdrawal date.
+          </div>
+        </div>
+        <!-- Date and Amount Row -->
+        <div class="flex flex-col md:flex-row gap-5 mb-7">
+          <div class="flex-1">
+            <label class="block font-medium text-gray-700 mb-2 text-[15px]"
+              >Withdrawal Date</label
+            >
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="-/-/-"
+                class="w-full px-5 py-3.5 text-[15px] bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+              />
+              <span
+                class="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-400"
+              >
+                <svg width="22" height="22" fill="none">
+                  <rect
+                    x="5"
+                    y="7"
+                    width="12"
+                    height="10"
+                    rx="2"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M8 7V5M14 7V5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="flex-1">
+            <label class="block font-medium text-gray-700 mb-2 text-[15px]"
+              >Available Amount</label
+            >
+            <div class="relative">
+              <input
+                type="text"
+                value="$ 12,500"
+                class="w-full px-5 py-3.5 text-[15px] bg-gray-50 border border-gray-200 rounded-xl text-gray-700 font-medium focus:outline-none"
+                readonly
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Payment Mode Grid -->
+        <div class="mb-8">
+          <label class="block font-medium text-gray-700 mb-2 text-[15px]"
+            >Payment Mode</label
+          >
+          <div class="grid grid-cols-1 md:grid-cols-1 gap-5">
+            <!-- Row 1 -->
+            <div class="grid grid-cols-2 gap-5">
+              <!-- Cash -->
+              <label
+                class="flex items-center w-full px-5 py-4 bg-white border border-gray-200 rounded-xl cursor-pointer"
+              >
+                <input
+                  type="radio"
+                  name="payment_mode"
+                  class="peer appearance-none w-5 h-5 rounded-full border-2 border-gray-300 checked:border-blue-600 checked:bg-blue-50 mr-3 transition-all"
+                  checked
+                />
+                <span
+                  class="flex items-center font-semibold text-gray-900 text-[16px] gap-2"
+                >
+                  <svg
+                    width="14"
+                    height="15"
+                    viewBox="0 0 14 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99209 14.168C6.08599 14.168 5.21986 13.9946 4.39371 13.648C3.6031 13.3102 2.89909 12.8324 2.2817 12.2146C1.66431 11.5969 1.18683 10.8924 0.849265 10.1013C0.502815 9.27464 0.32959 8.40797 0.32959 7.5013C0.32959 6.59464 0.502815 5.72797 0.849265 4.9013C1.18683 4.11019 1.66431 3.40575 2.2817 2.78797C2.89909 2.17019 3.6031 1.69241 4.39371 1.35464C5.21986 1.00797 6.08599 0.834636 6.99209 0.834636C7.89819 0.834636 8.76431 1.00797 9.59046 1.35464C10.3811 1.69241 11.0851 2.17019 11.7025 2.78797C12.3199 3.40575 12.7973 4.11019 13.1349 4.9013C13.4814 5.72797 13.6546 6.59464 13.6546 7.5013C13.6546 8.40797 13.4814 9.27464 13.1349 10.1013C12.7973 10.8924 12.3199 11.5969 11.7025 12.2146C11.0851 12.8324 10.3811 13.3102 9.59046 13.648C8.76431 13.9946 7.89819 14.168 6.99209 14.168ZM6.99209 12.8346C7.96037 12.8346 8.85759 12.5902 9.68374 12.1013C10.4832 11.6302 11.1184 10.9946 11.5892 10.1946C12.0778 9.36797 12.3221 8.47019 12.3221 7.5013C12.3221 6.53241 12.0778 5.63464 11.5892 4.80797C11.1184 4.00797 10.4832 3.37241 9.68374 2.9013C8.85759 2.41241 7.96037 2.16797 6.99209 2.16797C6.02381 2.16797 5.12659 2.41241 4.30044 2.9013C3.50094 3.37241 2.86578 4.00797 2.39496 4.80797C1.90638 5.63464 1.66209 6.53241 1.66209 7.5013C1.66209 8.47019 1.90638 9.36797 2.39496 10.1946C2.86578 10.9946 3.50094 11.6302 4.30044 12.1013C5.12659 12.5902 6.02381 12.8346 6.99209 12.8346ZM4.66021 8.83464H8.32459C8.41342 8.83464 8.49115 8.8013 8.55778 8.73464C8.6244 8.66797 8.65771 8.59019 8.65771 8.5013C8.65771 8.41241 8.6244 8.33464 8.55778 8.26797C8.49115 8.2013 8.41342 8.16797 8.32459 8.16797H5.65959C5.35756 8.16797 5.07995 8.09241 4.82678 7.9413C4.5736 7.79019 4.37151 7.58797 4.22049 7.33464C4.06947 7.0813 3.99396 6.80352 3.99396 6.5013C3.99396 6.19908 4.06947 5.9213 4.22049 5.66797C4.37151 5.41464 4.5736 5.21241 4.82678 5.0613C5.07995 4.91019 5.35756 4.83464 5.65959 4.83464H6.32584V3.5013H7.65834V4.83464H9.32397V6.16797H5.65959C5.57076 6.16797 5.49303 6.2013 5.4264 6.26797C5.35978 6.33464 5.32647 6.41241 5.32647 6.5013C5.32647 6.59019 5.35978 6.66797 5.4264 6.73464C5.49303 6.8013 5.57076 6.83464 5.65959 6.83464H8.32459C8.62662 6.83464 8.90423 6.91019 9.1574 7.0613C9.41058 7.21241 9.61267 7.41464 9.76369 7.66797C9.91471 7.9213 9.99022 8.19908 9.99022 8.5013C9.99022 8.80352 9.91471 9.0813 9.76369 9.33464C9.61267 9.58797 9.41058 9.79019 9.1574 9.9413C8.90423 10.0924 8.62662 10.168 8.32459 10.168H7.65834V11.5013H6.32584V10.168H4.66021V8.83464Z"
+                      fill="#4B5563"
+                    />
+                  </svg>
+
+                  Cash
+                </span>
+              </label>
+              <!-- Bank Transfer -->
+              <label
+                class="flex items-center w-full px-5 py-4 bg-white border border-gray-200 rounded-xl cursor-pointer"
+              >
+                <input
+                  type="radio"
+                  name="payment_mode"
+                  class="peer appearance-none w-5 h-5 rounded-full border-2 border-gray-300 checked:border-blue-600 checked:bg-blue-50 mr-3 transition-all"
+                />
+                <span
+                  class="flex items-center font-semibold text-gray-900 text-[16px] gap-2"
+                >
+                  <svg
+                    width="14"
+                    height="15"
+                    viewBox="0 0 14 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.32959 12.8346H13.6546V14.168H0.32959V12.8346ZM1.66209 7.5013H2.99459V12.168H1.66209V7.5013ZM4.99334 7.5013H6.32584V12.168H4.99334V7.5013ZM7.65834 7.5013H8.99084V12.168H7.65834V7.5013ZM10.9896 7.5013H12.3221V12.168H10.9896V7.5013ZM0.32959 4.16797L6.99209 0.834636L13.6546 4.16797V6.83464H0.32959V4.16797ZM1.66209 4.99464V5.5013H12.3221V4.99464L6.99209 2.32797L1.66209 4.99464ZM6.99209 4.83464C6.80554 4.83464 6.64786 4.77019 6.51905 4.6413C6.39024 4.51241 6.32584 4.35464 6.32584 4.16797C6.32584 3.9813 6.39024 3.82352 6.51905 3.69464C6.64786 3.56575 6.80554 3.5013 6.99209 3.5013C7.17864 3.5013 7.33632 3.56575 7.46513 3.69464C7.59394 3.82352 7.65834 3.9813 7.65834 4.16797C7.65834 4.35464 7.59394 4.51241 7.46513 4.6413C7.33632 4.77019 7.17864 4.83464 6.99209 4.83464Z"
+                      fill="#4B5563"
+                    />
+                  </svg>
+
+                  Bank Transfer
+                </span>
+              </label>
+            </div>
+            <!-- Row 2 -->
+            <div class="grid grid-cols-2 gap-5 mt-5 md:mt-0">
+              <!-- Check -->
+              <label
+                class="flex items-center w-full px-5 py-4 bg-white border border-gray-200 rounded-xl cursor-pointer"
+              >
+                <input
+                  type="radio"
+                  name="payment_mode"
+                  class="peer appearance-none w-5 h-5 rounded-full border-2 border-gray-300 checked:border-blue-600 checked:bg-blue-50 mr-3 transition-all"
+                />
+                <span
+                  class="flex items-center font-semibold text-gray-900 text-[16px] gap-2"
+                >
+                  <svg
+                    width="12"
+                    height="15"
+                    viewBox="0 0 12 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11.9886 4.83464V13.5013C11.9886 13.688 11.9242 13.8457 11.7954 13.9746C11.6666 14.1035 11.5089 14.168 11.3223 14.168H0.662344C0.475794 14.168 0.318115 14.1035 0.189306 13.9746C0.0604979 13.8457 -0.00390625 13.688 -0.00390625 13.5013V1.5013C-0.00390625 1.31464 0.0604979 1.15686 0.189306 1.02797C0.318115 0.89908 0.475794 0.834636 0.662344 0.834636H7.99109L11.9886 4.83464ZM10.6561 5.5013H7.32484V2.16797H1.32859V12.8346H10.6561V5.5013ZM3.32734 4.16797H5.32609V5.5013H3.32734V4.16797ZM3.32734 6.83464H8.65734V8.16797H3.32734V6.83464ZM3.32734 9.5013H8.65734V10.8346H3.32734V9.5013Z"
+                      fill="#4B5563"
+                    />
+                  </svg>
+
+                  Check
+                </span>
+              </label>
+              <!-- Online -->
+              <label
+                class="flex items-center w-full px-5 py-4 bg-white border border-gray-200 rounded-xl cursor-pointer"
+              >
+                <input
+                  type="radio"
+                  name="payment_mode"
+                  class="peer appearance-none w-5 h-5 rounded-full border-2 border-gray-300 checked:border-blue-600 checked:bg-blue-50 mr-3 transition-all"
+                />
+                <span
+                  class="flex items-center font-semibold text-gray-900 text-[16px] gap-2"
+                >
+                  <svg
+                    width="10"
+                    height="15"
+                    viewBox="0 0 10 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.66111 2.16797V12.8346H8.32361V2.16797H1.66111ZM0.994863 0.834636H8.98986C9.17641 0.834636 9.33409 0.89908 9.4629 1.02797C9.59171 1.15686 9.65611 1.31464 9.65611 1.5013V13.5013C9.65611 13.688 9.59171 13.8457 9.4629 13.9746C9.33409 14.1035 9.17641 14.168 8.98986 14.168H0.994863C0.808313 14.168 0.650634 14.1035 0.521826 13.9746C0.393017 13.8457 0.328613 13.688 0.328613 13.5013V1.5013C0.328613 1.31464 0.393017 1.15686 0.521826 1.02797C0.650634 0.89908 0.808313 0.834636 0.994863 0.834636ZM4.99236 10.8346C5.17891 10.8346 5.33659 10.8991 5.4654 11.028C5.59421 11.1569 5.65861 11.3146 5.65861 11.5013C5.65861 11.688 5.59421 11.8457 5.4654 11.9746C5.33659 12.1035 5.17891 12.168 4.99236 12.168C4.80581 12.168 4.64813 12.1035 4.51933 11.9746C4.39052 11.8457 4.32611 11.688 4.32611 11.5013C4.32611 11.3146 4.39052 11.1569 4.51933 11.028C4.64813 10.8991 4.80581 10.8346 4.99236 10.8346Z"
+                      fill="#4B5563"
+                    />
+                  </svg>
+
+                  Online
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buttons Row -->
+        <div class="flex justify-between items-center pt-2">
+          <button
+            type="button"
+            class="px-6 py-3 rounded-lg bg-gray-100 text-gray-700 font-semibold text-[16px]"
+          >
+            &larr; Back
+          </button>
+          <div class="flex items-center gap-3">
+            <button
+              type="button"
+              class="px-6 py-3 rounded-lg bg-gray-100 text-gray-700 font-semibold text-[16px]"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold text-[16px] hover:bg-blue-700"
+            >
+              Next &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

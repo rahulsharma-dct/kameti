@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Payment Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      .maxwidth {
+        max-width: 800px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex justify-center items-start py-8">
+    <div
+      class="maxwidth w-full bg-white rounded-2xl shadow-lg border border-gray-200 mx-0"
+    >
+      <!-- Header -->
+      <div class="flex items-center justify-between px-8 pt-7 pb-7 border-b">
+        <div>
+          <div class="text-[2rem] font-bold text-gray-900">₹4,000</div>
+          <div class="mt-2 text-gray-500 text-[15px]">
+            Paid On: 28 Jul 2025, 10:12 AM
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <button
+            class="px-4 py-2 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 text-sm flex items-center gap-2"
+          >
+            <svg
+              width="12"
+              height="14"
+              viewBox="0 0 12 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.31966 9.6543L8.80926 2.8943L7.90046 1.94763L1.41086 8.72096V9.6543H2.31966ZM2.84446 10.9876H0.130859V8.16096L7.45246 0.534298C7.57193 0.409853 7.72126 0.347631 7.90046 0.347631C8.07966 0.347631 8.22899 0.409853 8.34846 0.534298L10.1661 2.42763C10.2941 2.55208 10.3581 2.70763 10.3581 2.8943C10.3581 3.08096 10.2941 3.24096 10.1661 3.3743L2.84446 10.9876ZM0.130859 12.321H11.6509V13.6543H0.130859V12.321Z"
+                fill="#4B5563"
+              />
+            </svg>
+
+            Edit
+          </button>
+          <button
+            class="px-4 py-2 bg-red-100 text-red-600 font-medium rounded-lg hover:bg-red-200 text-sm flex items-center gap-2"
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.1688 2.99935H13.3688V4.33268H12.0888V12.9993C12.0888 13.186 12.027 13.3438 11.9032 13.4727C11.7795 13.6016 11.628 13.666 11.4488 13.666H2.48885C2.30965 13.666 2.15818 13.6016 2.03445 13.4727C1.91071 13.3438 1.84885 13.186 1.84885 12.9993V4.33268H0.568848V2.99935H3.76885V0.99935C3.76885 0.812683 3.83071 0.654905 3.95445 0.526016C4.07818 0.397127 4.22965 0.332683 4.40885 0.332683H9.52885C9.70805 0.332683 9.85952 0.397127 9.98325 0.526016C10.107 0.654905 10.1688 0.812683 10.1688 0.99935V2.99935ZM10.8088 4.33268H3.12885V12.3327H10.8088V4.33268ZM5.04885 6.33268H6.32885V10.3327H5.04885V6.33268ZM7.60885 6.33268H8.88885V10.3327H7.60885V6.33268ZM5.04885 1.66602V2.99935H8.88885V1.66602H5.04885Z"
+                fill="#DC2626"
+              />
+            </svg>
+
+            Delete
+          </button>
+          <button
+            class="ml-2 text-2xl text-gray-400 hover:text-gray-600 font-bold"
+          >
+            &times;
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Wrapper for Section -->
+      <div class="max-w-4xl mx-auto p-6 bg-transparent">
+        <!-- Overview Card -->
+        <div class="mb-6 rounded-lg border border-gray-200 bg-white">
+          <div class="pt-5 pb-3 px-6">
+            <div class="text-gray-800 font-semibold text-base mb-1">
+              Overview
+            </div>
+            <div class="text-xs text-gray-400 mb-4">
+              Gives a quick snapshot of everything important.
+            </div>
+            <table class="w-full text-sm text-gray-700">
+              <tbody>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2 w-52">User</td>
+                  <td class="py-2 text-blue-600 text-right">
+                    <a href="#">Ravi Kumar</a>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2">Kameti</td>
+                  <td class="py-2 text-blue-600 text-right">
+                    <a href="#">Diwali Kameti v1</a>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2">Enrollment</td>
+                  <td class="py-2 text-blue-600 text-right">
+                    <a href="#">Membership Ref</a>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2">Monthly Installment</td>
+                  <td class="py-2 text-right font-semibold">₹1,800</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2">Fine Included</td>
+                  <td class="py-2 text-right text-red-600 font-semibold">
+                    ₹200
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2">Payment Mode</td>
+                  <td class="py-2 text-right">UPI</td>
+                </tr>
+                <tr>
+                  <td class="py-2">Entry Added On</td>
+                  <td class="py-2 text-right">29 Jul 2025, 10:12 AM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Breakdown Card -->
+        <div class="mb-6 rounded-lg border border-gray-200 bg-white">
+          <div class="pt-5 pb-3 px-6">
+            <div class="text-gray-800 font-semibold text-base mb-1">
+              Distribution / Breakdown
+            </div>
+            <div class="text-xs text-gray-400 mb-4">
+              How this payment was broken down (especially if it covers multiple
+              months, partial, fine, etc.)
+            </div>
+            <table class="w-full text-sm text-gray-700 mb-6">
+              <tbody>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2 w-52">Total Paid</td>
+                  <td class="py-2 text-right font-semibold">₹4,000</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2">Installment Amount</td>
+                  <td class="py-2 text-right">₹1,800</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2">Fine</td>
+                  <td class="py-2 text-right text-red-600 font-semibold">
+                    ₹200
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100 align-top">
+                  <td class="py-2">Applied To</td>
+                  <td class="py-2 text-right leading-6">
+                    Installment #3 (Jul 2025)
+                    <span class="font-semibold">₹1,800</span><br />
+                    Installment #4 (Aug 2025)
+                    <span class="font-semibold">₹1,800</span>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-2">Extra Payment</td>
+                  <td class="py-2 text-right">
+                    Applied to next month/Distributed across remaining months
+                    <span class="font-semibold">₹200</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-2">Previous Dues Adjusted</td>
+                  <td class="py-2 text-right">None</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- Payment Breakdown info row -->
+            <div
+              class="mt-1 bg-blue-50 rounded-md px-5 py-2 flex items-start gap-2"
+            >
+              <svg
+                class="w-4 h-4 flex-shrink-0 text-blue-400"
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.75771 13.666C5.85161 13.666 4.98549 13.4927 4.15934 13.146C3.36872 12.8082 2.66472 12.3305 2.04733 11.7127C1.42994 11.0949 0.952457 10.3905 0.61489 9.59935C0.26844 8.77268 0.0952148 7.90602 0.0952148 6.99935C0.0952148 6.09268 0.26844 5.22602 0.61489 4.39935C0.952457 3.60824 1.42994 2.90379 2.04733 2.28602C2.66472 1.66824 3.36872 1.19046 4.15934 0.852683C4.98549 0.506016 5.85161 0.332683 6.75771 0.332683C7.66382 0.332683 8.52994 0.506016 9.35609 0.852683C10.1467 1.19046 10.8507 1.66824 11.4681 2.28602C12.0855 2.90379 12.563 3.60824 12.9005 4.39935C13.247 5.22602 13.4202 6.09268 13.4202 6.99935C13.4202 7.90602 13.247 8.77268 12.9005 9.59935C12.563 10.3905 12.0855 11.0949 11.4681 11.7127C10.8507 12.3305 10.1467 12.8082 9.35609 13.146C8.52994 13.4927 7.66382 13.666 6.75771 13.666ZM6.75771 12.3327C7.726 12.3327 8.62321 12.0882 9.44936 11.5993C10.2489 11.1282 10.884 10.4927 11.3548 9.69268C11.8434 8.86602 12.0877 7.96824 12.0877 6.99935C12.0877 6.03046 11.8434 5.13268 11.3548 4.30602C10.884 3.50602 10.2489 2.87046 9.44936 2.39935C8.62321 1.91046 7.726 1.66602 6.75771 1.66602C5.78943 1.66602 4.89221 1.91046 4.06606 2.39935C3.26656 2.87046 2.63141 3.50602 2.16059 4.30602C1.67201 5.13268 1.42771 6.03046 1.42771 6.99935C1.42771 7.96824 1.67201 8.86602 2.16059 9.69268C2.63141 10.4927 3.26656 11.1282 4.06606 11.5993C4.89221 12.0882 5.78943 12.3327 6.75771 12.3327ZM6.09146 3.66602H7.42396V4.99935H6.09146V3.66602ZM6.09146 6.33268H7.42396V10.3327H6.09146V6.33268Z"
+                  fill="#2563EB"
+                />
+              </svg>
+
+              <div class="text-blue-800 text-[12px]">
+                <span class="font-semibold">Payment Breakdown:</span>
+                This payment covers the July 2025 installment (₹1,800) plus a
+                late payment fine of ₹200. The payment was applied directly to
+                Installment #3 with no excess amount carried forward as credit.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>March 2024 Kameti - Payment Summary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen font-sans">
+    <div
+      class="max-w-5xl mx-auto pt-5 pb-12 mt-4 border rounded-xl shadow-xl bg-white"
+    >
+      <!-- Header -->
+      <div class="flex items-center justify-between mb-2 px-4">
+        <h1 class="text-gray-900 text-[18px] font-semibold">
+          Enrollment Details
+        </h1>
+        <button
+          class="text-gray-400 hover:text-gray-700 text-xl font-bold leading-none"
+        >
+          &times;
+        </button>
+      </div>
+
+      <nav
+        class="mt-6 flex items-center space-x-8 border-b border-t pt-3 pb-3 text-sm font-medium text-gray-500 select-none px-4"
+      >
+        <a href="#" class="hover:text-gray-900">Overview</a>
+        <a
+          href="#"
+          class="text-white bg-blue-600 px-3 py-3 rounded-md shadow font-medium cursor-default"
+          >Financial Summary</a
+        >
+        <a href="#" class="hover:text-gray-900">Installments</a>
+        <a href="#" class="hover:text-gray-900">Payments</a>
+      </nav>
+
+      <!-- Financial Summary Section -->
+      <div class="mt-8 px-4">
+        <!-- Section Header -->
+        <div class="bg-green-50 rounded-xl p-5 mb-4 flex flex-col items-start">
+          <div class="flex items-center gap-2">
+            <svg
+              width="32"
+              height="33"
+              viewBox="0 0 32 33"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 16.2031C0 7.36657 7.16344 0.203125 16 0.203125C24.8366 0.203125 32 7.36657 32 16.2031C32 25.0397 24.8366 32.2031 16 32.2031C7.16344 32.2031 0 25.0397 0 16.2031Z"
+                fill="#DCFCE7"
+              />
+              <path
+                d="M15.9921 22.8691C15.086 22.8691 14.2199 22.6958 13.3937 22.3491C12.6031 22.0114 11.8991 21.5336 11.2817 20.9158C10.6643 20.298 10.1868 19.5936 9.84926 18.8025C9.50281 17.9758 9.32959 17.1091 9.32959 16.2025C9.32959 15.2958 9.50281 14.4291 9.84926 13.6025C10.1868 12.8114 10.6643 12.1069 11.2817 11.4891C11.8991 10.8714 12.6031 10.3936 13.3937 10.0558C14.2199 9.70914 15.086 9.53581 15.9921 9.53581C16.8982 9.53581 17.7643 9.70914 18.5905 10.0558C19.3811 10.3936 20.0851 10.8714 20.7025 11.4891C21.3199 12.1069 21.7973 12.8114 22.1349 13.6025C22.4814 14.4291 22.6546 15.2958 22.6546 16.2025C22.6546 17.1091 22.4814 17.9758 22.1349 18.8025C21.7973 19.5936 21.3199 20.298 20.7025 20.9158C20.0851 21.5336 19.3811 22.0114 18.5905 22.3491C17.7643 22.6958 16.8982 22.8691 15.9921 22.8691ZM15.9921 21.5358C16.9604 21.5358 17.8576 21.2914 18.6837 20.8025C19.4832 20.3314 20.1184 19.6958 20.5892 18.8958C21.0778 18.0691 21.3221 17.1714 21.3221 16.2025C21.3221 15.2336 21.0778 14.3358 20.5892 13.5091C20.1184 12.7091 19.4832 12.0736 18.6837 11.6025C17.8576 11.1136 16.9604 10.8691 15.9921 10.8691C15.0238 10.8691 14.1266 11.1136 13.3004 11.6025C12.5009 12.0736 11.8658 12.7091 11.395 13.5091C10.9064 14.3358 10.6621 15.2336 10.6621 16.2025C10.6621 17.1714 10.9064 18.0691 11.395 18.8958C11.8658 19.6958 12.5009 20.3314 13.3004 20.8025C14.1266 21.2914 15.0238 21.5358 15.9921 21.5358ZM13.6602 17.5358H17.3246C17.4134 17.5358 17.4912 17.5025 17.5578 17.4358C17.6244 17.3691 17.6577 17.2914 17.6577 17.2025C17.6577 17.1136 17.6244 17.0358 17.5578 16.9691C17.4912 16.9025 17.4134 16.8691 17.3246 16.8691H14.6596C14.3576 16.8691 14.08 16.7936 13.8268 16.6425C13.5736 16.4914 13.3715 16.2891 13.2205 16.0358C13.0695 15.7825 12.994 15.5047 12.994 15.2025C12.994 14.9003 13.0695 14.6225 13.2205 14.3691C13.3715 14.1158 13.5736 13.9136 13.8268 13.7625C14.08 13.6114 14.3576 13.5358 14.6596 13.5358H15.3258V12.2025H16.6583V13.5358H18.324V14.8691H14.6596C14.5708 14.8691 14.493 14.9025 14.4264 14.9691C14.3598 15.0358 14.3265 15.1136 14.3265 15.2025C14.3265 15.2914 14.3598 15.3691 14.4264 15.4358C14.493 15.5025 14.5708 15.5358 14.6596 15.5358H17.3246C17.6266 15.5358 17.9042 15.6114 18.1574 15.7625C18.4106 15.9136 18.6127 16.1158 18.7637 16.3691C18.9147 16.6225 18.9902 16.9003 18.9902 17.2025C18.9902 17.5047 18.9147 17.7825 18.7637 18.0358C18.6127 18.2891 18.4106 18.4914 18.1574 18.6425C17.9042 18.7936 17.6266 18.8691 17.3246 18.8691H16.6583V20.2025H15.3258V18.8691H13.6602V17.5358Z"
+                fill="#16A34A"
+              />
+            </svg>
+
+            <div>
+              <div class="text-base font-semibold text-green-800">
+                Financial Summary
+              </div>
+            </div>
+          </div>
+          <div class="text-sm text-green-700 mt-1">
+            Complete financial overview of this enrollment
+          </div>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-4 gap-4 mb-5">
+          <div
+            class="bg-blue-50 rounded-lg p-5 flex flex-col justify-center items-start"
+          >
+            <div class="text-blue-600 font-semibold text-2xl mb-1">6</div>
+            <div class="text-blue-600 text-sm">Total Installments</div>
+          </div>
+          <div
+            class="bg-green-50 rounded-lg p-5 flex flex-col justify-center items-start"
+          >
+            <div class="text-green-500 font-semibold text-2xl mb-1">4</div>
+            <div class="text-green-500 text-sm">Installments Paid</div>
+          </div>
+          <div
+            class="bg-purple-50 rounded-lg p-5 flex flex-col justify-center items-start"
+          >
+            <div class="text-purple-600 font-semibold text-2xl mb-1">
+              ₹10,000
+            </div>
+            <div class="text-purple-600 text-sm">Amount Paid</div>
+          </div>
+          <div
+            class="bg-red-50 rounded-lg p-5 flex flex-col justify-center items-start"
+          >
+            <div class="text-red-500 font-semibold text-2xl mb-1">₹5,000</div>
+            <div class="text-red-500 text-sm">Amount Due</div>
+          </div>
+          <div
+            class="bg-yellow-50 rounded-lg p-5 flex flex-col justify-center items-start"
+          >
+            <div class="text-amber-600 font-bold text-xl mb-1">₹150</div>
+            <div class="text-amber-600 text-sm">Fine Incurred</div>
+          </div>
+          <div
+            class="bg-cyan-50 rounded-lg p-5 flex flex-col justify-center items-start"
+          >
+            <div class="text-teal-600 font-bold text-xl mb-1">₹250</div>
+            <div class="text-teal-600 text-sm">Extra Balance</div>
+          </div>
+          <div
+            class="bg-indigo-50 rounded-lg p-5 flex flex-col items-start justify-center"
+          >
+            <div class="text-indigo-700 font-bold text-sm mb-1">
+              Payment Methods
+            </div>
+            <div class="text-indigo-700 text-sm">UPI, Cash</div>
+          </div>
+          <div
+            class="bg-gray-50 rounded-lg p-5 flex flex-col items-start justify-center"
+          >
+            <div class="text-gray-700 font-bold text-sm mb-1">Last Payment</div>
+            <div class="text-gray-700 text-sm">Jul 15, 2024</div>
+          </div>
+        </div>
+
+        <!-- Next Due Date Row -->
+        <div
+          class="bg-white rounded-xl border flex items-start mt-6 p-5 justify-between"
+        >
+          <div>
+            <div class="text-gray-700 font-medium">Next Due Date</div>
+            <div class="text-gray-500 text-sm mt-1">
+              2 installments remaining
+            </div>
+          </div>
+          <div class="text-red-600 font-bold text-ms">Aug 15, 2024</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

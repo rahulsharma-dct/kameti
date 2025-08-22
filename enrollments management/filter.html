@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter Enrollments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50">
+    <div class="w-80 bg-white shadow-sm border border-gray-200">
+      <!-- Header -->
+      <div class="flex items-center justify-between border-b px-5 py-5 mb-6">
+        <h2 class="text-lg font-semibold text-gray-900">Filter Enrollments</h2>
+        <button class="text-gray-400 hover:text-gray-600">&times;</button>
+      </div>
+
+      <!-- User-Based Filters -->
+      <div class="mb-6 px-5">
+        <h3
+          class="text-sm font-medium text-gray-700 mb-3 flex items-center gap-2"
+        >
+          <svg
+            width="10"
+            height="14"
+            viewBox="0 0 10 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.624023 13.125C0.624023 12.2772 0.837836 11.4917 1.26546 10.7683C1.67754 10.0683 2.23345 9.51222 2.9332 9.1C3.65627 8.67222 4.44155 8.45833 5.28902 8.45833C6.1365 8.45833 6.92177 8.67222 7.64485 9.1C8.3446 9.51222 8.90051 10.0683 9.31259 10.7683C9.74021 11.4917 9.95402 12.2772 9.95402 13.125H8.78777C8.78777 12.495 8.62839 11.9078 8.30961 11.3633C7.99861 10.8344 7.57876 10.4144 7.05006 10.1033C6.50581 9.78444 5.9188 9.625 5.28902 9.625C4.65925 9.625 4.07224 9.78444 3.52799 10.1033C2.99929 10.4144 2.57944 10.8344 2.26844 11.3633C1.94966 11.9078 1.79027 12.495 1.79027 13.125H0.624023ZM5.28902 7.875C4.65147 7.875 4.06446 7.71556 3.52799 7.39667C2.99929 7.08556 2.57944 6.66556 2.26844 6.13667C1.94966 5.6 1.79027 5.01278 1.79027 4.375C1.79027 3.73722 1.94966 3.15 2.26844 2.61333C2.57944 2.08444 2.99929 1.66444 3.52799 1.35333C4.06446 1.03444 4.65147 0.875 5.28902 0.875C5.92657 0.875 6.51359 1.03444 7.05006 1.35333C7.57876 1.66444 7.99861 2.08444 8.30961 2.61333C8.62839 3.15 8.78777 3.73722 8.78777 4.375C8.78777 5.01278 8.62839 5.6 8.30961 6.13667C7.99861 6.66556 7.57876 7.08556 7.05006 7.39667C6.51359 7.71556 5.92657 7.875 5.28902 7.875ZM5.28902 6.70833C5.70887 6.70833 6.09762 6.60333 6.45527 6.39333C6.81292 6.18333 7.09671 5.89944 7.30664 5.54167C7.51656 5.18389 7.62152 4.795 7.62152 4.375C7.62152 3.955 7.51656 3.56611 7.30664 3.20833C7.09671 2.85056 6.81292 2.56667 6.45527 2.35667C6.09762 2.14667 5.70887 2.04167 5.28902 2.04167C4.86917 2.04167 4.48042 2.14667 4.12277 2.35667C3.76512 2.56667 3.48134 2.85056 3.27141 3.20833C3.06149 3.56611 2.95652 3.955 2.95652 4.375C2.95652 4.795 3.06149 5.18389 3.27141 5.54167C3.48134 5.89944 3.76512 6.18333 4.12277 6.39333C4.48042 6.60333 4.86917 6.70833 5.28902 6.70833Z"
+              fill="#111827"
+            />
+          </svg>
+
+          User-Based Filters
+        </h3>
+        <div class="space-y-3">
+          <div>
+            <label class="block text-xs text-gray-600 mb-1 flex items-center">
+              User Name / ID
+            </label>
+            <input
+              type="text"
+              placeholder="Search for user name or ID"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+          <div>
+            <label class="block text-xs text-gray-600 mb-1 flex items-center">
+              Phone Number
+            </label>
+            <input
+              type="text"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+          <div class="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              id="enrollment-multiple"
+              class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+            <label for="enrollment-multiple" class="text-sm text-gray-700"
+              >Enrollment Multiple Times</label
+            >
+          </div>
+          <div class="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              id="fee-collected"
+              class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+            <label for="fee-collected" class="text-sm text-gray-700"
+              >Fee Collected</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Kameti-Based Filters -->
+      <div class="mb-6 px-5">
+        <h3
+          class="text-sm font-medium text-gray-700 mb-3 flex items-center gap-2"
+        >
+          <svg
+            width="13"
+            height="12"
+            viewBox="0 0 13 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.45551 0.167317C8.30298 0.167317 9.08826 0.381207 9.81133 0.808985C10.5111 1.22121 11.067 1.77732 11.4791 2.47732C11.9067 3.20065 12.1205 3.98621 12.1205 4.83398C12.1205 5.45621 12.0039 6.05121 11.7706 6.61898C11.5452 7.16343 11.2244 7.64954 10.8085 8.07732C10.3925 8.5051 9.9163 8.84343 9.37982 9.09232C9.13102 9.62898 8.79281 10.1054 8.36518 10.5215C7.93756 10.9376 7.45162 11.2584 6.90737 11.484C6.3398 11.7173 5.74501 11.834 5.12301 11.834C4.27553 11.834 3.49026 11.6201 2.76718 11.1923C2.06743 10.7801 1.51152 10.224 1.09945 9.52398C0.67182 8.80065 0.458008 8.0151 0.458008 7.16732C0.458008 6.5451 0.574633 5.9501 0.807883 5.38232C1.03336 4.83787 1.35408 4.35176 1.77004 3.92398C2.186 3.49621 2.66222 3.15787 3.1987 2.90898C3.4475 2.37232 3.78571 1.89593 4.21333 1.47982C4.64096 1.06371 5.1269 0.742873 5.67115 0.517318C6.23872 0.283984 6.83351 0.167317 7.45551 0.167317ZM5.12301 3.66732C4.49323 3.66732 3.90622 3.82676 3.36197 4.14565C2.83327 4.45676 2.41342 4.87676 2.10242 5.40565C1.78365 5.9501 1.62426 6.53732 1.62426 7.16732C1.62426 7.79732 1.78365 8.38454 2.10242 8.92898C2.41342 9.45787 2.83327 9.87787 3.36197 10.189C3.90622 10.5079 4.49323 10.6673 5.12301 10.6673C5.75278 10.6673 6.3398 10.5079 6.88405 10.189C7.41275 9.87787 7.8326 9.45787 8.1436 8.92898C8.46237 8.38454 8.62176 7.79732 8.62176 7.16732C8.62176 6.53732 8.46237 5.9501 8.1436 5.40565C7.8326 4.87676 7.41275 4.45676 6.88405 4.14565C6.3398 3.82676 5.75278 3.66732 5.12301 3.66732ZM5.70613 4.25065V4.83398H6.87238V6.00065H4.53988C4.46213 6.00065 4.3941 6.02982 4.33579 6.08815C4.27748 6.14648 4.24832 6.2126 4.24832 6.28648C4.24832 6.36037 4.27165 6.42454 4.3183 6.47898C4.36495 6.53343 4.42326 6.56843 4.49323 6.58398H4.53988H5.70613C5.97048 6.58398 6.21345 6.6501 6.43504 6.78232C6.65663 6.91454 6.83351 7.09148 6.96568 7.31315C7.09786 7.53482 7.16395 7.77787 7.16395 8.04232C7.16395 8.30676 7.09786 8.54982 6.96568 8.77148C6.83351 8.99315 6.65663 9.1701 6.43504 9.30232C6.21345 9.43454 5.97048 9.50065 5.70613 9.50065V10.084H4.53988V9.50065H3.37363V8.33398H5.70613C5.78388 8.33398 5.85191 8.30482 5.91023 8.24648C5.96854 8.18815 5.9977 8.12204 5.9977 8.04815C5.9977 7.97426 5.97437 7.9101 5.92772 7.85565C5.88107 7.80121 5.82276 7.76621 5.75278 7.75065H5.70613H4.53988C4.27553 7.75065 4.03256 7.68454 3.81098 7.55232C3.58939 7.4201 3.41251 7.24315 3.28033 7.02148C3.14816 6.79982 3.08207 6.55676 3.08207 6.29232C3.08207 6.02787 3.14816 5.78482 3.28033 5.56315C3.41251 5.34148 3.58939 5.16454 3.81098 5.03232C4.03256 4.9001 4.27553 4.83398 4.53988 4.83398V4.25065H5.70613ZM7.45551 1.33398C6.94236 1.33398 6.46031 1.43704 6.00936 1.64315C5.55841 1.84926 5.16966 2.13898 4.84311 2.51232C4.93641 2.50454 5.02971 2.50065 5.12301 2.50065C5.97048 2.50065 6.75576 2.71454 7.47883 3.14232C8.17858 3.55454 8.7345 4.11065 9.14657 4.81065C9.57419 5.53398 9.78801 6.31954 9.78801 7.16732C9.78801 7.26065 9.78412 7.35398 9.77635 7.44732C10.1495 7.12065 10.4392 6.73176 10.6452 6.28065C10.8512 5.82954 10.9543 5.34732 10.9543 4.83398C10.9543 4.20398 10.7949 3.61676 10.4761 3.07232C10.1651 2.54343 9.74524 2.12343 9.21655 1.81232C8.6723 1.49343 8.08528 1.33398 7.45551 1.33398Z"
+              fill="#111827"
+            />
+          </svg>
+
+          Kameti-Based Filters
+        </h3>
+
+        <div class="space-y-3">
+          <!-- Kameti Title -->
+          <div>
+            <label class="block text-xs text-gray-600 mb-1 flex items-center">
+              Kameti Title
+            </label>
+            <select
+              class="w-full px-3 py-2 border border-gray-300 rounded-2xl text-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              <option class="">Select Kameti Titles</option>
+            </select>
+          </div>
+
+          <!-- Installment Amount Range -->
+          <div>
+            <label class="block text-xs text-gray-600 mb-2 flex items-center">
+              Installment Amount Range
+            </label>
+            <div class="flex space-x-2">
+              <input
+                type="number"
+                placeholder="1,000"
+                class="w-full px-2 py-2 border border-gray-300 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+              <span class="flex items-center text-gray-500">to</span>
+              <input
+                type="number"
+                placeholder="2,000"
+                class="w-full px-2 py-2 border border-gray-300 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Financial Status Filters -->
+      <div class="mb-6 px-5">
+        <h3
+          class="text-sm font-medium text-gray-700 mb-3 flex items-center gap-2"
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 13 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.28926 11.834C5.49621 11.834 4.73815 11.6823 4.01507 11.379C3.3231 11.0834 2.70693 10.6654 2.16656 10.1248C1.6262 9.58426 1.2083 8.96787 0.912845 8.27565C0.60962 7.55232 0.458008 6.79398 0.458008 6.00065C0.458008 5.20732 0.60962 4.44898 0.912845 3.72565C1.2083 3.03343 1.6262 2.41704 2.16656 1.87648C2.70693 1.33593 3.3231 0.917873 4.01507 0.622317C4.73815 0.318984 5.49621 0.167317 6.28926 0.167317C7.08231 0.167317 7.84037 0.318984 8.56345 0.622317C9.25542 0.917873 9.87159 1.33593 10.412 1.87648C10.9523 2.41704 11.3702 3.03343 11.6657 3.72565C11.9689 4.44898 12.1205 5.20732 12.1205 6.00065C12.1205 6.79398 11.9689 7.55232 11.6657 8.27565C11.3702 8.96787 10.9523 9.58426 10.412 10.1248C9.87159 10.6654 9.25542 11.0834 8.56345 11.379C7.84037 11.6823 7.08231 11.834 6.28926 11.834ZM6.28926 10.6673C7.13673 10.6673 7.92201 10.4534 8.64508 10.0257C9.34483 9.61343 9.90075 9.05732 10.3128 8.35732C10.7404 7.63398 10.9543 6.84843 10.9543 6.00065C10.9543 5.15287 10.7404 4.36732 10.3128 3.64398C9.90075 2.94398 9.34483 2.38787 8.64508 1.97565C7.92201 1.54787 7.13673 1.33398 6.28926 1.33398C5.44178 1.33398 4.65651 1.54787 3.93343 1.97565C3.23368 2.38787 2.67777 2.94398 2.2657 3.64398C1.83807 4.36732 1.62426 5.15287 1.62426 6.00065C1.62426 6.84843 1.83807 7.63398 2.2657 8.35732C2.67777 9.05732 3.23368 9.61343 3.93343 10.0257C4.65651 10.4534 5.44178 10.6673 6.28926 10.6673ZM4.24832 7.16732H7.45551C7.53326 7.16732 7.60129 7.13815 7.6596 7.07982C7.71791 7.02148 7.74707 6.95343 7.74707 6.87565C7.74707 6.79787 7.71791 6.72982 7.6596 6.67148C7.60129 6.61315 7.53326 6.58398 7.45551 6.58398H5.12301C4.85866 6.58398 4.61569 6.51787 4.3941 6.38565C4.17251 6.25343 3.99563 6.07648 3.86346 5.85482C3.73128 5.63315 3.6652 5.3901 3.6652 5.12565C3.6652 4.86121 3.73128 4.61815 3.86346 4.39648C3.99563 4.17482 4.17251 3.99787 4.3941 3.86565C4.61569 3.73343 4.85866 3.66732 5.12301 3.66732H5.70613V2.50065H6.87238V3.66732H8.3302V4.83398H5.12301C5.04526 4.83398 4.97723 4.86315 4.91891 4.92148C4.8606 4.97982 4.83145 5.04787 4.83145 5.12565C4.83145 5.20343 4.8606 5.27148 4.91891 5.32982C4.97723 5.38815 5.04526 5.41732 5.12301 5.41732H7.45551C7.71986 5.41732 7.96283 5.48343 8.18441 5.61565C8.406 5.74787 8.58288 5.92482 8.71506 6.14648C8.84723 6.36815 8.91332 6.61121 8.91332 6.87565C8.91332 7.1401 8.84723 7.38315 8.71506 7.60482C8.58288 7.82648 8.406 8.00343 8.18441 8.13565C7.96283 8.26787 7.71986 8.33398 7.45551 8.33398H6.87238V9.50065H5.70613V8.33398H4.24832V7.16732Z"
+              fill="#111827"
+            />
+          </svg>
+
+          Financial Status Filters
+        </h3>
+        <div class="space-y-3">
+          <label class="flex items-center text-sm text-gray-700">
+            <input
+              type="checkbox"
+              class="mr-2 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+            />
+            Has Pending Dues
+          </label>
+          <label class="flex items-center text-sm text-gray-700">
+            <input
+              type="checkbox"
+              class="mr-2 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+            />
+            Has Extra Balance
+          </label>
+        </div>
+      </div>
+
+      <!-- Timeline Filters -->
+      <div class="mb-6 px-5">
+        <h3
+          class="text-sm font-medium text-gray-700 mb-3 flex items-center gap-2"
+        >
+          <svg
+            width="13"
+            height="12"
+            viewBox="0 0 13 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.53988 0.167317V1.33398H8.03863V0.167317H9.20488V1.33398H11.5374C11.7007 1.33398 11.8387 1.39037 11.9514 1.50315C12.0641 1.61593 12.1205 1.75398 12.1205 1.91732V11.2507C12.1205 11.414 12.0641 11.552 11.9514 11.6648C11.8387 11.7776 11.7007 11.834 11.5374 11.834H1.04113C0.877858 11.834 0.739852 11.7776 0.627114 11.6648C0.514377 11.552 0.458008 11.414 0.458008 11.2507V1.91732C0.458008 1.75398 0.514377 1.61593 0.627114 1.50315C0.739852 1.39037 0.877858 1.33398 1.04113 1.33398H3.37363V0.167317H4.53988ZM10.9543 6.00065H1.62426V10.6673H10.9543V6.00065ZM3.37363 2.50065H1.62426V4.83398H10.9543V2.50065H9.20488V3.66732H8.03863V2.50065H4.53988V3.66732H3.37363V2.50065Z"
+              fill="#111827"
+            />
+          </svg>
+
+          Timeline Filters
+        </h3>
+        <div class="space-y-4">
+          <!-- Enrollment Date -->
+          <div>
+            <label class="block text-xs text-gray-600 mb-1"
+              >Enrollment Date</label
+            >
+            <div class="flex items-center space-x-2">
+              <input
+                type="date"
+                class="flex-1 w-[119px] px-3 py-2 border border-gray-300 rounded-2xl text-[12px] focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <span class="text-gray-500">to</span>
+              <input
+                type="date"
+                class="flex-1 w-[119px] px-3 py-2 border border-gray-300 rounded-2xl text-[12px] focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+          </div>
+
+          <!-- Last Payment Date -->
+          <div>
+            <label class="block text-xs text-gray-600 mb-1"
+              >Last Payment Date</label
+            >
+            <div class="flex items-center space-x-2">
+              <input
+                type="date"
+                class="flex-1 w-[119px] px-3 py-2 border border-gray-300 rounded-2xl text-[12px] focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <span class="text-gray-500">to</span>
+              <input
+                type="date"
+                class="flex-1 w-[119px] px-3 py-2 border border-gray-300 rounded-2xl text-[12px] focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+          </div>
+
+          <!-- Next Payment Due -->
+          <div>
+            <label class="block text-xs text-gray-600 mb-1"
+              >Next Payment Due In</label
+            >
+            <select
+              class="w-full px-3 py-2 border border-gray-200 bg-gray-100 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option>All</option>
+              <option>7 Days</option>
+              <option>15 Days</option>
+              <option>30 Days</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Status-Based Filters -->
+      <div class="mb-6 px-5">
+        <h3
+          class="text-sm font-medium text-gray-700 mb-3 flex items-center gap-2"
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 11 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.28914 0.582683L10.0824 1.64435C10.2146 1.67546 10.3235 1.74546 10.409 1.85435C10.4945 1.96324 10.5373 2.08379 10.5373 2.21602V8.03768C10.5373 8.62879 10.3993 9.18102 10.1232 9.69435C9.84723 10.2077 9.46432 10.6277 8.97449 10.9543L5.28914 13.416L1.60379 10.9543C1.11397 10.6277 0.731047 10.2077 0.455034 9.69435C0.179022 9.18102 0.0410156 8.62879 0.0410156 8.03768V2.21602C0.0410156 2.08379 0.0837781 1.96324 0.169303 1.85435C0.254828 1.74546 0.363678 1.67546 0.495853 1.64435L5.28914 0.582683ZM5.28914 1.77268L1.20727 2.68268V8.03768C1.20727 8.43435 1.29862 8.80379 1.48133 9.14602C1.66405 9.48824 1.91868 9.76824 2.24523 9.98602L5.28914 12.016L8.33305 9.98602C8.6596 9.76824 8.91423 9.48824 9.09695 9.14602C9.27966 8.80379 9.37102 8.43435 9.37102 8.03768V2.68268L5.28914 1.77268ZM7.88988 4.79435L8.70625 5.62268L4.99758 9.33268L2.52513 6.85935L3.35317 6.03102L4.99758 7.68768L7.88988 4.79435Z"
+              fill="#111827"
+            />
+          </svg>
+
+          Status-Based Filters
+        </h3>
+        <div class="space-y-2">
+          <div class="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              id="all-statuses"
+              class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+            <label for="all-statuses" class="text-sm text-gray-700"
+              >Unpaid</label
+            >
+          </div>
+          <div class="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              id="Withdrawn"
+              class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+            <label for="Withdrawn" class="text-sm text-gray-700"
+              >Withdrawn</label
+            >
+          </div>
+          <div class="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              id="Completed"
+              class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+            <label for="Completed" class="text-sm text-gray-700"
+              >Completed</label
+            >
+          </div>
+          <div class="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              id="Dropped"
+              class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+            <label for="Dropped" class="text-sm text-gray-700">Dropped</label>
+          </div>
+        </div>
+      </div>
+      <!-- Action Buttons -->
+      <div class="flex space-x-3 py-5 px-5 border-t border-gray-200">
+        <button
+          class="flex-1 bg-blue-600 text-white py-2 px-3 rounded-md text-sm font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors flex items-center justify-center"
+        >
+          Apply Filters
+        </button>
+        <button
+          class="flex-1 bg-gray-100 text-gray-700 py-2 px-3 rounded-md text-sm font-medium hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-colors flex items-center justify-center"
+        >
+          Reset Filters
+        </button>
+      </div>
+    </div>
+
+    <style>
+      .slider::-webkit-slider-thumb {
+        appearance: none;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background: #3b82f6;
+        cursor: pointer;
+      }
+
+      .slider::-moz-range-thumb {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background: #3b82f6;
+        cursor: pointer;
+        border: none;
+      }
+    </style>
+  </body>
+</html>

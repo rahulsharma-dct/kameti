@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Withdrawal Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-200 flex items-center justify-center min-h-screen">
+    <div
+      class="w-[370px] rounded-2xl bg-white shadow-xl border border-gray-300 px-8 py-7"
+    >
+      <div class="flex items-center justify-between mb-5">
+        <h2 class="font-bold text-gray-900 text-lg">Edit Withdrawal Details</h2>
+        <button class="text-2xl text-gray-300 hover:text-gray-600">
+          &times;
+        </button>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-4 mb-4">
+        <label class="block text-[15px] text-gray-900 font-bold mb-3"
+          >Payment Mode</label
+        >
+        <div class="flex gap-4">
+          <label
+            class="flex items-center cursor-pointer bg-gray-50 px-5 py-2 rounded-xl border border-gray-300"
+          >
+            <input
+              type="radio"
+              name="payment_mode"
+              class="peer appearance-none w-5 h-5 rounded-full border-2 border-gray-300 mr-3 transition-all"
+              checked
+            />
+            <span class="text-[16px] font-semibold text-gray-900 select-none"
+              >Cash</span
+            >
+          </label>
+          <label
+            class="flex items-center cursor-pointer bg-gray-50 px-5 py-2 rounded-xl border border-gray-300"
+          >
+            <input
+              type="radio"
+              name="payment_mode"
+              class="peer appearance-none w-5 h-5 rounded-full border-2 border-gray-300 mr-3 transition-all"
+            />
+            <span class="text-[16px] font-semibold text-gray-900 select-none"
+              >Online</span
+            >
+          </label>
+        </div>
+      </div>
+
+      <!-- WITHDRAWAL DATE -->
+      <div class="bg-gray-50 rounded-xl p-4 mb-4">
+        <label class="block text-[15px] text-gray-700 font-bold mb-2"
+          >Withdrawal Date</label
+        >
+        <div class="relative">
+          <input
+            type=""
+            class="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-800 bg-white outline-none focus:ring-2 focus:ring-blue-500 text-[15px]"
+          />
+          <span
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"
+          >
+            <svg
+              width="14"
+              height="15"
+              viewBox="0 0 14 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 1.875H11.375V0.625H10.125V1.875H3.875V0.625H2.625V1.875H2C1.3125 1.875 0.75 2.4375 0.75 3.125V13.125C0.75 13.8125 1.3125 14.375 2 14.375H12C12.6875 14.375 13.25 13.8125 13.25 13.125V3.125C13.25 2.4375 12.6875 1.875 12 1.875ZM12 13.125H2V5H12V13.125Z"
+                fill="black"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <!-- AMOUNT DISTRIBUTION -->
+      <div class="bg-gray-50 rounded-xl p-4 mb-3">
+        <div class="font-semibold text-gray-700 mb-1 text-[15px]">
+          Amount Distribution
+        </div>
+        <div class="mb-2">
+          <div class="text-sm text-gray-700 mb-1">Priya Sharma</div>
+          <div class="relative">
+            <span
+              class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-base"
+              >₹</span
+            >
+            <input
+              type="number"
+              value="7500"
+              class="w-full pl-7 pr-2 py-2 rounded-lg border border-gray-300 bg-white text-gray-800 text-[15px] outline-none focus:ring-2 focus:ring-blue-500 font-medium"
+            />
+          </div>
+        </div>
+        <div class="mb-4">
+          <div class="text-sm text-gray-700 mb-1">Rajesh Patel</div>
+          <div class="relative">
+            <span
+              class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-base"
+              >₹</span
+            >
+            <input
+              type="number"
+              value="7500"
+              class="w-full pl-7 pr-2 py-2 rounded-lg border border-gray-300 bg-white text-gray-800 text-[15px] outline-none focus:ring-2 focus:ring-blue-500 font-medium"
+            />
+          </div>
+        </div>
+        <div class="flex justify-between items-center pt-3 border-t">
+          <span class="text-gray-700 font-bold text-[15px]">Total Amount:</span>
+          <div>
+            <span class="font-bold text-[16px] text-gray-900">₹15,000</span>
+            <span class="text-gray-400 text-[15px] ml-1">/ ₹15,000</span>
+          </div>
+        </div>
+      </div>
+      <!-- BUTTONS -->
+      <div class="flex gap-3 mt-2">
+        <button
+          class="flex-1 py-3 rounded-lg bg-gray-100 text-gray-700 font-medium text-[15px]"
+        >
+          Cancel
+        </button>
+        <button
+          class="flex-1 py-3 rounded-lg bg-blue-600 text-white font-medium text-[15px] hover:bg-blue-700"
+        >
+          Save Changes
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
